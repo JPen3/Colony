@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Item : MonoBehaviour {
+[System.Serializable]
+public class Item {
 	public string itemName;
 	public int itemID;
 	public string itemDesc;
@@ -11,7 +12,11 @@ public class Item : MonoBehaviour {
 	public enum ItemType {
 		WEAPON,
 		RESOURCE,
+		MATERIAL,
 		TOOL,
-		FORTIFICATION
+		FORTIFICATION,
+		FOOD,
+		GEAR,
+		KEYITEM
 	}
 }
