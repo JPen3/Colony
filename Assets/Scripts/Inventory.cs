@@ -9,14 +9,13 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase>();
-		print (inventory.Count);
 		inventory.Add(database.items[0]);
 		inventory.Add(database.items[1]);
-		print (inventory[0].itemName);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnGUI() {
+		for(int i = 0; i < inventory.Count; i++){
+			GUI.Label(new Rect(10,i*20,200,50), inventory[i].itemName);
+		}
 	}
 }

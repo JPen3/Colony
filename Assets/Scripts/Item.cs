@@ -19,4 +19,12 @@ public class Item {
 		GEAR,
 		KEYITEM
 	}
+
+	public Item(string name, int id, string desc, ItemType type){
+		itemName = name;
+		itemID = id;
+		itemIcon = Resources.Load<Texture2D>("Item Icons/" + name);
+		itemDesc = desc;
+		itemType = type;
+	}
 }
