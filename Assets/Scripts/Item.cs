@@ -27,4 +27,8 @@ public class Item {
 		itemDesc = desc;
 		itemType = type;
 	}
+
+	public Item(){
+
+	}
 }
