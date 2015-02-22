@@ -16,6 +16,7 @@ public class Item {
 		TOOL,
 		FORTIFICATION,
 		FOOD,
+		CONSUMABLE,
 		GEAR,
 		KEYITEM
 	}
