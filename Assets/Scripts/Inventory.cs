@@ -23,9 +23,10 @@ public class Inventory : MonoBehaviour {
 			inventory.Add (new Item());
 		}
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase>();
-		AddItem(5);
-		AddItem(5);
+		AddItem(0);
 		AddItem(1);
+		AddItem(7);
+		AddItem(6);
 	}
 
 	void Update(){
@@ -80,6 +81,11 @@ public class Inventory : MonoBehaviour {
 							print ("Clicked " + i);
 							if(item.itemType == Item.ItemType.MATERIAL){
 								print ("Material");
+							}
+							if(item.itemRecipe != null){
+								for(int j = 0; j<item.itemRecipe.Count; j++){
+									print (item.itemRecipe[j]);
+								}
 							}
 						}
 					}

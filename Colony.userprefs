@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Inventory.cs">
     <Files>
-      <File FileName="Assets\Scripts\Inventory.cs" Line="123" Column="51" />
-      <File FileName="Assets\Scripts\ItemDatabase.cs" Line="17" Column="44" />
-      <File FileName="Assets\Scripts\Item.cs" Line="19" Column="14" />
+      <File FileName="Assets\Scripts\Inventory.cs" Line="85" Column="34" />
+      <File FileName="Assets\Scripts\ItemDatabase.cs" Line="17" Column="78" />
+      <File FileName="Assets\Scripts\Item.cs" Line="39" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
