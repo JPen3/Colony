@@ -7,7 +7,9 @@ public class Inventory : MonoBehaviour {
 	public GUISkin skin;
 	public List<Item> inventory = new List<Item>();
 	public List<Item> slots = new List<Item>();
+	public List<Item> craft = new List<Item>(new Item[]{new Item(),new Item(),new Item()});
 	private bool showInventory;
+	private bool showCraft;
 	private ItemDatabase database;
 	private bool showTooltip;
 	private string tooltip;
@@ -26,12 +28,29 @@ public class Inventory : MonoBehaviour {
 		AddItem(0);
 		AddItem(1);
 		AddItem(7);
+		AddItem(0);
+		AddItem(1);
+		AddItem(7);
 		AddItem(6);
 	}
 
 	void Update(){
 		if(Input.GetButtonDown("Inventory")){
+			if(showCraft){
+				showCraft = !showCraft;
+			}
 			showInventory = !showInventory;
+			print (showCraft);
+		}
+		if(Input.GetButtonDown("Craft")){
+			if(!showCraft && showInventory){
+				showCraft = !showCraft;
+			}
+			else{
+				showCraft = !showCraft;
+				showInventory = !showInventory;
+			}
+			print (showCraft);
 		}
 	}
 	
@@ -45,8 +64,54 @@ public class Inventory : MonoBehaviour {
 				GUI.Box(new Rect(e.mousePosition.x + 15f, e.mousePosition.y, 200, 200), tooltip, skin.GetStyle("Tooltip"));
 			}
 		}
+		if(showCraft){
+			DrawCraft();
+		}
 		if (draggingItem) {
 			GUI.DrawTexture(new Rect(e.mousePosition.x, e.mousePosition.y, 50, 50), draggedItem.itemIcon);
+		}
+	}
+
+	void DrawCraft(){
+		Event e = Event.current;
+		for (int x = 0; x < 3; x++) {
+			Rect slotRect = new Rect (x * 60, slotsY * 60, 50, 50);
+			GUI.Box(slotRect, "",skin.GetStyle("Slot"));
+			Item item = craft[x];
+			
+			if(item.itemName != null){
+				GUI.DrawTexture(slotRect,item.itemIcon);
+				if(slotRect.Contains(e.mousePosition)){
+					tooltip = CreateTooltip(item);
+					showTooltip = true;
+					if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItem){
+						draggingItem = true;
+						prevIndex = x;
+						draggedItem = item;
+						craft[x] = new Item();
+					}
+					if(e.type == EventType.mouseUp && draggingItem){
+						craft[prevIndex] = craft[x];
+						craft[x] = draggedItem;
+						draggingItem = false;
+						draggedItem = null;
+					}
+				}
+			}
+			else{
+				if(slotRect.Contains(e.mousePosition)){
+					if(e.type == EventType.mouseUp && draggingItem){
+						craft[x] = draggedItem;
+						draggingItem = false;
+						draggedItem = null;
+					}
+				}
+			}
+			if(tooltip == ""){
+				showTooltip = false;
+			}
+			
+			//i++;
 		}
 	}
 
@@ -84,7 +149,10 @@ public class Inventory : MonoBehaviour {
 							}
 							if(item.itemRecipe != null){
 								for(int j = 0; j<item.itemRecipe.Count; j++){
-									print (item.itemRecipe[j]);
+									int k = item.itemRecipe[j];
+									//RemoveItem(k);
+									print(InventoryContains(k));
+									//print (item.itemID);
 								}
 							}
 						}
@@ -147,7 +215,7 @@ public class Inventory : MonoBehaviour {
 		return result;
 	}
 
-	/*private void UseConsumable(int id, int slot, bool deleteItem){
+	/*private void UseConsumable(Item item, int slot, bool deleteItem){
 		switch (id) 
 		{
 		case 0:
