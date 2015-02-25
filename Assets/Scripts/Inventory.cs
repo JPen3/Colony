@@ -235,6 +235,21 @@ public class Inventory : MonoBehaviour {
 		return result;
 	}
 
+	public void SetShowInventory(bool show){
+		showInventory = show;
+	}
+
+	public bool GetShowInventory(){
+		return showInventory;
+	}
+	public void SetShowCraft(bool show){
+		showCraft = show;
+	}
+	
+	public bool GetShowCraft(){
+		return showCraft;
+	}
+
 	/*private void UseConsumable(Item item, int slot, bool deleteItem){
 		switch (id) 
 		{

@@ -14,10 +14,12 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject MainPanel;
     public GameObject WeekPanel; 
 
+	private Inventory inventory;
+
     
     // Use this for initialization
 	void Start () {
-	
+		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
 	}
 	
 	// Update is called once per frame
@@ -30,6 +32,9 @@ public class RoomUIScript : MonoBehaviour {
         MainCamera.GetComponent<CameraLerpScript>().back2Top();
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = MainPanel; 
         MainPanel.SetActive(true);
+
+		inventory.SetShowInventory(false);
+		inventory.SetShowCraft(false);
     }
 
     public void SelectResources()//brings up the resources panel
