@@ -8,7 +8,9 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject ResourcesSendPanel;
     public GameObject ResourcesSendCountTxt; 
     public GameObject MaterialSendPanel;
-    public GameObject MaterialSendCountTxt; 
+    public GameObject MaterialSendCountTxt;
+    public GameObject MainPanel;
+    public GameObject DayPanel; 
 
     
     // Use this for initialization
@@ -39,5 +41,10 @@ public class RoomUIScript : MonoBehaviour {
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel.SetActive(false);
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = ResourcesPanel;
         ResourcesPanel.SetActive(true);
+    }
+
+    public void DayProgress()
+    {
+        DayPanel.GetComponent<DayPropScript>().DayInt++; 
     }
 }

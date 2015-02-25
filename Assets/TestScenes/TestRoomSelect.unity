@@ -1348,7 +1348,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 264455298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900728841}
+        m_MethodName: DayProgress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &264455298
@@ -4708,6 +4720,8 @@ MonoBehaviour:
   ResourcesSendCountTxt: {fileID: 0}
   MaterialSendPanel: {fileID: 1883439164}
   MaterialSendCountTxt: {fileID: 0}
+  MainPanel: {fileID: 1959146650}
+  DayPanel: {fileID: 1521242157}
 --- !u!224 &900728842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4918,7 +4932,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919760046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -500, y: 0, z: -500}
+  m_LocalPosition: {x: -500, y: -.00999999978, z: -500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7618,6 +7632,7 @@ GameObject:
   - 224: {fileID: 1521242158}
   - 222: {fileID: 1521242160}
   - 114: {fileID: 1521242159}
+  - 114: {fileID: 1521242161}
   m_Layer: 5
   m_Name: DayPanel
   m_TagString: Untagged
@@ -7670,6 +7685,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1521242157}
+--- !u!114 &1521242161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1521242157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e0b8671938cd84182875942484086b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayInt: 1
+  DayTxt: {fileID: 836325379}
 --- !u!1 &1556522420
 GameObject:
   m_ObjectHideFlags: 0
