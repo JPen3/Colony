@@ -12,7 +12,7 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject MaterialSendPanel;
     public GameObject MaterialSendCountTxt;
     public GameObject MainPanel;
-    public GameObject DayPanel; 
+    public GameObject WeekPanel; 
 
     
     // Use this for initialization
@@ -49,7 +49,7 @@ public class RoomUIScript : MonoBehaviour {
 
     public void DayProgress()//will progress the game by one day
     {
-        DayPanel.GetComponent<DayPropScript>().DayInt++; 
+        WeekPanel.GetComponent<DayPropScript>().DayInt++; 
         //lines after this point will restore the colonists you sent out for now, will go elsewhere at a later date
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway;
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway = 0; 

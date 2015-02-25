@@ -1296,7 +1296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Day
+  m_Text: Next Week
 --- !u!222 &259270147
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1398,7 +1398,7 @@ GameObject:
   - 114: {fileID: 264455298}
   - 114: {fileID: 264455297}
   m_Layer: 5
-  m_Name: NextDayButton
+  m_Name: NextWeekButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4590,7 +4590,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Day: '
+  m_Text: 'Week: '
 --- !u!222 &836325382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8010,7 +8010,7 @@ GameObject:
   - 114: {fileID: 1521242159}
   - 114: {fileID: 1521242161}
   m_Layer: 5
-  m_Name: DayPanel
+  m_Name: WeekPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

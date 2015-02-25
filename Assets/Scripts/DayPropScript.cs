@@ -14,6 +14,6 @@ public class DayPropScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        DayTxt.GetComponent<Text>().text = "Day: " + DayInt; 
+        DayTxt.GetComponent<Text>().text = "Week: " + DayInt; 
 	}
 }
