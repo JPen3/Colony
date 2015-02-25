@@ -30,8 +30,8 @@ public class Inventory : MonoBehaviour {
 		AddItem(7);
 		AddItem(0);
 		AddItem(1);
-		AddItem(7);
-		AddItem(6);
+		//AddItem(7);
+		//AddItem(6);
 	}
 
 	void Update(){
@@ -43,14 +43,23 @@ public class Inventory : MonoBehaviour {
 			print (showCraft);
 		}
 		if(Input.GetButtonDown("Craft")){
-			if(!showCraft && showInventory){
+			/*if(!showCraft && showInventory){
 				showCraft = !showCraft;
 			}
 			else{
 				showCraft = !showCraft;
 				showInventory = !showInventory;
-			}
-			print (showCraft);
+			}*/
+			CraftAlarm();
+		}
+	}
+
+	void CraftAlarm(){
+		if(InventoryContains(0) && InventoryContains(1) && InventoryContains(7)){
+			RemoveItem(0);
+			RemoveItem(1);
+			RemoveItem(7);
+			AddItem(6);
 		}
 	}
 	
@@ -208,6 +217,17 @@ public class Inventory : MonoBehaviour {
 		bool result = false;
 		for(int i = 0; i < inventory.Count; i++){
 			result = inventory[i].itemID == id;
+			if(result){
+				break;
+			}
+		}
+		return result;
+	}
+
+	bool CraftContains(int id){
+		bool result = false;
+		for(int i = 0; i < craft.Count; i++){
+			result = craft[i].itemID == id;
 			if(result){
 				break;
 			}
