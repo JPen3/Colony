@@ -106,6 +106,25 @@ MonoBehaviour:
   skin: {fileID: 11400000, guid: dcfaed072221007499fde906972e7992, type: 2}
   inventory: []
   slots: []
+  craft:
+  - itemName: 
+    itemID: 0
+    itemDesc: 
+    itemRecipe: 
+    itemIcon: {fileID: 0}
+    itemType: 0
+  - itemName: 
+    itemID: 0
+    itemDesc: 
+    itemRecipe: 
+    itemIcon: {fileID: 0}
+    itemType: 0
+  - itemName: 
+    itemID: 0
+    itemDesc: 
+    itemRecipe: 
+    itemIcon: {fileID: 0}
+    itemType: 0
 --- !u!4 &581254772
 Transform:
   m_ObjectHideFlags: 0
