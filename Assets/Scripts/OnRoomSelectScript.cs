@@ -31,6 +31,7 @@ public class OnRoomSelectScript : MonoBehaviour {
             MainCamera.GetComponent<CameraLerpScript>().LerpTimer = 0.0f;
             if (UIPanel01 != null)
             {
+                MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel.SetActive(false);
                 UIPanel01.SetActive(true);
                 MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = UIPanel01;
             }
