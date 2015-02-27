@@ -57,7 +57,8 @@ public class RoomUIScript : MonoBehaviour {
         WeekPanel.GetComponent<DayPropScript>().DayInt++; 
         //lines after this point will restore the colonists you sent out for now, will go elsewhere at a later date
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway;
-        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway = 0; 
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway = 0;
+        GatheringController.GetComponent<GatheringControllerScript>().ReturnGather(); 
     }
 
     public void AddGatheringNum()//adds 1 to the number of gatherer you are sending out
