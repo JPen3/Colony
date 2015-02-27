@@ -249,7 +249,7 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	void AddItem(int id){
+	public void AddItem(int id){
 		for (int i = 0; i < inventory.Count; i++) {
 			if(inventory[i].itemName == null){
 				inventory[i] = database.items[id];

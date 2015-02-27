@@ -1,45 +1,20 @@
 fileFormatVersion: 2
-guid: 951cbf67151b1594f9e0159cdee52ebf
+guid: d135e949e2063b346944b60b0cddc89a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube1
-    100004: pCylinder1
-    100006: pCylinder2
-    100008: pCylinder3
-    100010: hammerHead
-    100012: hammerTop
-    100014: handle
-    400000: //RootNode
-    400002: pCube1
-    400004: pCylinder1
-    400006: pCylinder2
-    400008: pCylinder3
-    400010: hammerHead
-    400012: hammerTop
-    400014: handle
-    2300000: pCube1
-    2300002: pCylinder1
-    2300004: pCylinder2
-    2300006: pCylinder3
-    2300008: hammerHead
-    2300010: hammerTop
-    2300012: handle
-    3300000: pCube1
-    3300002: pCylinder1
-    3300004: pCylinder2
-    3300006: pCylinder3
-    3300008: hammerHead
-    3300010: hammerTop
-    3300012: handle
-    4300000: pCylinder1
-    4300002: pCylinder2
-    4300004: pCube1
-    4300006: pCylinder3
-    4300008: hammerTop
-    4300010: hammerHead
-    4300012: handle
+    100000: jugEmpty
+    100002: //RootNode
+    100004: water
+    400000: jugEmpty
+    400002: //RootNode
+    400004: water
+    2300000: jugEmpty
+    2300002: water
+    3300000: jugEmpty
+    3300002: water
+    4300000: jugEmpty
+    4300002: water
     9500000: //RootNode
   materials:
     importMaterials: 1
