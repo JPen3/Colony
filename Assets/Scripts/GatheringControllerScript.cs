@@ -6,11 +6,15 @@ public class GatheringControllerScript : MonoBehaviour {
 
     public int GathererNum = 0;
     public GameObject ColonyController;
-    public GameObject GatherNumTxt; 
+    public GameObject GatherNumTxt;
+    public GameObject Inventory; 
     
     // Use this for initialization
 	void Start () {
-	    
+	    if(GameObject.Find("Inventory"))
+        {
+            Inventory = GameObject.Find("Inventory"); 
+        }
 	}
 	
 	// Update is called once per frame
@@ -31,8 +35,17 @@ public class GatheringControllerScript : MonoBehaviour {
 
     public void ReturnGather()
     {
-        //this is where we will calculate the items that were gathered and if there were any casualties
-        //set up a notification system that displays when a colonist has died...
+        int stack01 = Random.Range(0,11);
+        int stack02 = Random.Range(0, 11);
+        int stack03 = Random.Range(0, 11);
+        for(int i = 0; i<3; i++)
+        {
+            Inventory.GetComponent<Inventory>().AddItem(Random.Range(0, 9));
+            /*for(int j = 0; i<Random.Range(1,11); j++)
+            {
+                Inventory.GetComponent<Inventory>().AddItem(Random.Range(0, 9));
+            }*/
+        }
     }
 
     public void DisplayGatherNum()

@@ -3644,6 +3644,7 @@ MonoBehaviour:
   GathererNum: 0
   ColonyController: {fileID: 170716861}
   GatherNumTxt: {fileID: 1904654572}
+  Inventory: {fileID: 0}
 --- !u!4 &682972923
 Transform:
   m_ObjectHideFlags: 0
@@ -4877,7 +4878,7 @@ MonoBehaviour:
   MaterialSendPanel: {fileID: 1883439164}
   MaterialSendCountTxt: {fileID: 0}
   MainPanel: {fileID: 1959146650}
-  WeekPanel: {fileID: 0}
+  WeekPanel: {fileID: 1521242157}
 --- !u!224 &900728842
 RectTransform:
   m_ObjectHideFlags: 0
