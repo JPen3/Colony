@@ -27,6 +27,8 @@ public class GatheringControllerScript : MonoBehaviour {
         if(ColonyController != null)
         {
             ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway += GathererNum;
+            ColonyController.GetComponent<ColonyControllerScript>().ColResCount += GathererNum;
+
             ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= GathererNum;
             GathererNum = 0;
             DisplayGatherNum();

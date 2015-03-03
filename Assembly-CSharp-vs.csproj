@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemDatabase.cs" />
+     <Compile Include="Assets\Scripts\MenuUIScript.cs" />
      <Compile Include="Assets\Scripts\OnRoomSelectScript.cs" />
      <Compile Include="Assets\Scripts\RoomUIScript.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />

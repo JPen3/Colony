@@ -7,6 +7,8 @@ public class ColonyControllerScript : MonoBehaviour {
     public int ColonistCount = 5;
     public int ColonistsAway = 0;
     public int ColonistsAvailable = 5;
+    public int ColResCount;
+    public int ColMatCount; 
     public GameObject TotalColsTxt;
     public GameObject ColsAwayTxt;
     public GameObject ColsHereTxt; 

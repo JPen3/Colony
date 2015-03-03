@@ -83,4 +83,9 @@ public class RoomUIScript : MonoBehaviour {
     {
         GatheringController.GetComponent<GatheringControllerScript>().SendOutGatherers(); 
     }
+
+    public void Back2Menu()
+    {
+        Application.LoadLevel("StartScreen"); 
+    }
 }
