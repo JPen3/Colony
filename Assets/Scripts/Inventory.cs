@@ -15,8 +15,11 @@ public class Inventory : MonoBehaviour {
 	private string tooltip;
 
 	private bool draggingItem;
+	private bool draggingItemCraft;
 	private Item draggedItem;
+	private Item draggedItemCraft;
 	private int prevIndex;
+	private int prevIndexCraft;
 
 	// Use this for initialization
 	void Start () {
@@ -28,8 +31,8 @@ public class Inventory : MonoBehaviour {
 		AddItem(0);
 		AddItem(1);
 		AddItem(7);
-		AddItem(0);
 		AddItem(1);
+		AddItem(2);
 		//AddItem(7);
 		//AddItem(6);
 	}
@@ -51,15 +54,30 @@ public class Inventory : MonoBehaviour {
 				showInventory = !showInventory;
 			}*/
 			CraftAlarm();
+			CraftMolotov();
 		}
 	}
 
 	void CraftAlarm(){
-		if(InventoryContains(0) && InventoryContains(1) && InventoryContains(7)){
-			RemoveItem(0);
-			RemoveItem(1);
-			RemoveItem(7);
+		if(CraftContains(0) && CraftContains(1) && CraftContains(7)){
+			//RemoveItem(0);
+			//RemoveItem(1);
+			//RemoveItem(7);
+			RemoveItemCraft(0);
+			RemoveItemCraft(1);
+			RemoveItemCraft(7);
 			AddItem(6);
+		}
+	}
+
+	void CraftMolotov(){
+		if(CraftContains(0) && CraftContains(1)){
+			//RemoveItem(0);
+			//RemoveItem(1);
+			//RemoveItem(7);
+			RemoveItemCraft(1);
+			RemoveItemCraft(2);
+			AddItem(4);
 		}
 	}
 	
@@ -83,6 +101,7 @@ public class Inventory : MonoBehaviour {
 
 	void DrawCraft(){
 		Event e = Event.current;
+		//int i = 0;
 		for (int x = 0; x < 3; x++) {
 			Rect slotRect = new Rect (x * 60, slotsY * 60, 50, 50);
 			GUI.Box(slotRect, "",skin.GetStyle("Slot"));
@@ -95,24 +114,46 @@ public class Inventory : MonoBehaviour {
 					showTooltip = true;
 					if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItem){
 						draggingItem = true;
-						prevIndex = x;
+						prevIndexCraft = x;
+						print(prevIndexCraft);
 						draggedItem = item;
-						craft[x] = new Item();
+						inventory[x] = new Item();
 					}
-					if(e.type == EventType.mouseUp && draggingItem){
-						craft[prevIndex] = craft[x];
-						craft[x] = draggedItem;
-						draggingItem = false;
-						draggedItem = null;
+					/*if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItemCraft){
+						draggingItemCraft = true;
+						prevIndexCraft = x;
+						draggedItemCraft = item;
+						craft[x] = new Item();
+					}*/
+					if(e.type == EventType.mouseUp){
+						if(draggingItem){
+							craft[prevIndexCraft] = craft[x];
+							craft[x] = draggedItem;
+							draggingItem = false;
+							draggedItem = null;
+						}
+						else if(draggingItemCraft){
+							craft[prevIndexCraft] = craft[x];
+							craft[x] = draggedItemCraft;
+							draggingItemCraft = false;
+							draggedItemCraft = null;
+						}
 					}
 				}
 			}
 			else{
 				if(slotRect.Contains(e.mousePosition)){
-					if(e.type == EventType.mouseUp && draggingItem){
-						craft[x] = draggedItem;
-						draggingItem = false;
-						draggedItem = null;
+					if(e.type == EventType.mouseUp){
+						if(draggingItem){
+							craft[x] = draggedItem;
+							draggingItem = false;
+							draggedItem = null;
+						}
+						if(draggingItemCraft){
+							craft[x] = draggedItemCraft;
+							draggingItemCraft = false;
+							draggedItemCraft = null;
+						}
 					}
 				}
 			}
@@ -194,6 +235,15 @@ public class Inventory : MonoBehaviour {
 		for (int i = 0; i < inventory.Count; i++) {
 			if (inventory[i].itemID == id){
 				inventory[i] = new Item();
+				break;
+			}
+		}
+	}
+
+	void RemoveItemCraft(int id){
+		for (int i = 0; i < craft.Count; i++) {
+			if (craft[i].itemID == id){
+				craft[i] = new Item();
 				break;
 			}
 		}
