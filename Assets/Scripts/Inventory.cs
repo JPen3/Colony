@@ -103,31 +103,34 @@ public class Inventory : MonoBehaviour {
 		Event e = Event.current;
 		//int i = 0;
 		for (int x = 0; x < 3; x++) {
-			Rect slotRect = new Rect (x * 60, slotsY * 60, 50, 50);
-			GUI.Box(slotRect, "",skin.GetStyle("Slot"));
+			Rect slotCraft = new Rect (x * 60, slotsY * 60, 50, 50);
+			GUI.Box(slotCraft, "",skin.GetStyle("Slot"));
 			Item item = craft[x];
-			
+
+			//print ("Previsious inventory index is " + prevIndex);
+			//print ("Previsious craft index is " + prevIndexCraft);
+
 			if(item.itemName != null){
-				GUI.DrawTexture(slotRect,item.itemIcon);
-				if(slotRect.Contains(e.mousePosition)){
+				GUI.DrawTexture(slotCraft,item.itemIcon);
+				if(slotCraft.Contains(e.mousePosition)){
 					tooltip = CreateTooltip(item);
 					showTooltip = true;
-					if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItem){
+					/*if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItem){
 						draggingItem = true;
-						prevIndexCraft = x;
-						print(prevIndexCraft);
+						//prevIndexCraft = x;
+						//print(prevIndexCraft);
 						draggedItem = item;
 						inventory[x] = new Item();
 					}
-					/*if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItemCraft){
-						draggingItemCraft = true;
-						prevIndexCraft = x;
+					if(e.button == 0 && e.type == EventType.mouseDrag && (!draggingItemCraft && draggingItem)){
+						//draggingItemCraft = true;
+						//prevIndexCraft = x;
 						draggedItemCraft = item;
-						craft[x] = new Item();
+						inventory[x] = new Item();
 					}*/
 					if(e.type == EventType.mouseUp){
 						if(draggingItem){
-							craft[prevIndexCraft] = craft[x];
+							//craft[prevIndexCraft] = craft[x];
 							craft[x] = draggedItem;
 							draggingItem = false;
 							draggedItem = null;
@@ -142,18 +145,22 @@ public class Inventory : MonoBehaviour {
 				}
 			}
 			else{
-				if(slotRect.Contains(e.mousePosition)){
+				if(slotCraft.Contains(e.mousePosition)){
 					if(e.type == EventType.mouseUp){
 						if(draggingItem){
 							craft[x] = draggedItem;
-							draggingItem = false;
-							draggedItem = null;
+							//draggingItem = false;
+							//draggedItem = null;
 						}
 						if(draggingItemCraft){
 							craft[x] = draggedItemCraft;
-							draggingItemCraft = false;
-							draggedItemCraft = null;
+							//draggingItemCraft = false;
+							//draggedItemCraft = null;
 						}
+						draggingItemCraft = false;
+						draggedItemCraft = null;
+						draggingItem = false;
+						draggedItem = null;
 					}
 				}
 			}
