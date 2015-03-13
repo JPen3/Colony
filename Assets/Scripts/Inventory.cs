@@ -71,7 +71,7 @@ public class Inventory : MonoBehaviour {
 	}
 
 	void CraftMolotov(){
-		if(CraftContains(0) && CraftContains(1)){
+		if(CraftContains(1) && CraftContains(2)){
 			//RemoveItem(0);
 			//RemoveItem(1);
 			//RemoveItem(7);
@@ -103,7 +103,7 @@ public class Inventory : MonoBehaviour {
 		Event e = Event.current;
 		//int i = 0;
 		for (int x = 0; x < 3; x++) {
-			Rect slotCraft = new Rect (x * 60, slotsY * 60, 50, 50);
+			Rect slotCraft = new Rect (x * 60 + Screen.width/2-(slotsX*60/2), slotsY * 60 + 60, 50, 50);
 			GUI.Box(slotCraft, "",skin.GetStyle("Slot"));
 			Item item = craft[x];
 
@@ -177,7 +177,7 @@ public class Inventory : MonoBehaviour {
 		int i = 0;
 		for(int y = 0; y < slotsY ; y++){
 			for(int x = 0; x < slotsX ; x++){
-				Rect slotRect = new Rect(x*60,y*60,50,50);
+				Rect slotRect = new Rect(x*60+Screen.width/2-(slotsX*60/2),y*60+60,50,50);
 				GUI.Box(slotRect, "",skin.GetStyle("Slot"));
 				slots[i] = inventory[i];
 				Item item = slots[i];

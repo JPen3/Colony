@@ -37,9 +37,9 @@ public class GatheringControllerScript : MonoBehaviour {
 
     public void ReturnGather()
     {
-        int stack01 = Random.Range(0,11);
-        int stack02 = Random.Range(0, 11);
-        int stack03 = Random.Range(0, 11);
+        int stack01 = Random.Range(0,10);
+        int stack02 = Random.Range(0, 10);
+        int stack03 = Random.Range(0, 10);
         for(int i = 0; i<3; i++)
         {
             Inventory.GetComponent<Inventory>().AddItem(Random.Range(0, 9));

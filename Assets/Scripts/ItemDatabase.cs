@@ -10,7 +10,7 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add(new Item("bottle",1,"A bottle.",Item.ItemType.MATERIAL));
 		items.Add(new Item("cloth",2,"Some cloth.",Item.ItemType.MATERIAL));
 		items.Add(new Item("hammer",3,"A hammer.",Item.ItemType.TOOL));
-		items.Add(new Item("molotov",4,"A molotov cocktail.",Item.ItemType.WEAPON));
+		items.Add(new Item("molotov",4,"A molotov cocktail.",new List<int>(new int[]{1,2}),Item.ItemType.WEAPON));
 		items.Add(new Item("nails",5,"Some nails.",Item.ItemType.MATERIAL));
 		items.Add(new Item("noise alarm",6,"A noise alarm.",new List<int>(new int[]{0,1,7}),Item.ItemType.FORTIFICATION));		
 		items.Add(new Item("rope",7,"Some rope.",Item.ItemType.MATERIAL));
