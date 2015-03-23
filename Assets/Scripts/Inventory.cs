@@ -100,6 +100,7 @@ public class Inventory : MonoBehaviour {
 	}
 
 	void DrawCraft(){
+		//print (draggingItem + " " +draggedItem.itemName);
 		Event e = Event.current;
 		//int i = 0;
 		for (int x = 0; x < 3; x++) {
@@ -121,13 +122,15 @@ public class Inventory : MonoBehaviour {
 						//print(prevIndexCraft);
 						draggedItem = item;
 						inventory[x] = new Item();
-					}
-					if(e.button == 0 && e.type == EventType.mouseDrag && (!draggingItemCraft && draggingItem)){
-						//draggingItemCraft = true;
-						//prevIndexCraft = x;
-						draggedItemCraft = item;
-						inventory[x] = new Item();
 					}*/
+					if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItemCraft){
+						if(!draggingItem){
+							draggingItemCraft = true;
+							prevIndexCraft = x;
+							draggedItemCraft = item;
+							craft[x] = new Item();
+						}
+					}
 					if(e.type == EventType.mouseUp){
 						if(draggingItem){
 							//craft[prevIndexCraft] = craft[x];
@@ -170,6 +173,7 @@ public class Inventory : MonoBehaviour {
 			
 			//i++;
 		}
+		print (draggingItem + " " +draggedItem.itemName);
 	}
 
 	void DrawInventory(){
@@ -217,11 +221,19 @@ public class Inventory : MonoBehaviour {
 				}
 				else{
 					if(slotRect.Contains(e.mousePosition)){
-						if(e.type == EventType.mouseUp && draggingItem){
-							inventory[i] = draggedItem;
-							draggingItem = false;
-							draggedItem = null;
+						if(e.type == EventType.mouseUp){
+							if(draggingItem){
+								inventory[i] = draggedItem;
+								draggingItem = false;
+								draggedItem = null;
+							}
+							if(draggingItemCraft){
+								inventory[i] = draggedItemCraft;
+								draggingItemCraft = false;
+								draggedItemCraft = null;
+							}
 						}
+
 					}
 				}
 				if(tooltip == ""){
