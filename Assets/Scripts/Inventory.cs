@@ -71,12 +71,13 @@ public class Inventory : MonoBehaviour {
 	}
 
 	void CraftMolotov(){
-		if(CraftContains(1) && CraftContains(2)){
+		if(CraftContains(1) && CraftContains(2) && CraftContains(9)){
 			//RemoveItem(0);
 			//RemoveItem(1);
 			//RemoveItem(7);
 			RemoveItemCraft(1);
 			RemoveItemCraft(2);
+			RemoveItemCraft(9);
 			AddItem(4);
 		}
 	}
