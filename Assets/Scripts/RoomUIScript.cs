@@ -12,7 +12,8 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject MaterialSendPanel;
     public GameObject MaterialSendCountTxt;
     public GameObject MainPanel;
-    public GameObject WeekPanel; 
+    public GameObject WeekPanel;
+    public GameObject EventController; 
 
 	private Inventory inventory;
 
@@ -54,11 +55,14 @@ public class RoomUIScript : MonoBehaviour {
 
     public void DayProgress()//will progress the game by one day
     {
-        WeekPanel.GetComponent<DayPropScript>().DayInt++; 
+        WeekPanel.GetComponent<DayPropScript>().DayInt++;
+        EventController.GetComponent<ColonyEventScript>().GatheringEvent(ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway);
         //lines after this point will restore the colonists you sent out for now, will go elsewhere at a later date
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway;
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway = 0;
-        GatheringController.GetComponent<GatheringControllerScript>().ReturnGather(); 
+        GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
+        EventController.GetComponent<ColonyEventScript>().ColonyEvent(ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
+
     }
 
     public void AddGatheringNum()//adds 1 to the number of gatherer you are sending out
