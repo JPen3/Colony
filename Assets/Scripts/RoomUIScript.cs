@@ -46,6 +46,14 @@ public class RoomUIScript : MonoBehaviour {
 
     }
 
+    public void SelectSupply()//brings up the resources panel
+    {
+        MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel.SetActive(false);
+        MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = MaterialSendPanel;
+        MaterialSendPanel.SetActive(true);
+
+    }
+
     public void Back2ResourcesPanel()//returns to the resources panel from either material or resources gathering pages
     {
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel.SetActive(false);
@@ -56,12 +64,27 @@ public class RoomUIScript : MonoBehaviour {
     public void DayProgress()//will progress the game by one day
     {
         WeekPanel.GetComponent<DayPropScript>().DayInt++;
-        EventController.GetComponent<ColonyEventScript>().GatheringEvent(ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway);
+        if (ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway > 0)
+        {
+            print("Supply Party: ");
+            EventController.GetComponent<ColonyEventScript>().GatheringEvent(ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway, "Supply");
+        }
+        if (ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway > 0)
+        {
+            print("Material Gathering: ");
+            EventController.GetComponent<ColonyEventScript>().GatheringEvent(ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway, "Mat");
+        }
+        
         //lines after this point will restore the colonists you sent out for now, will go elsewhere at a later date
-        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway;
-        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAway = 0;
-        GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway;
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway;
         EventController.GetComponent<ColonyEventScript>().ColonyEvent(ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable; 
+        ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway = 0;
+        ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway = 0;
+        GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
+        GatheringController.GetComponent<GatheringControllerScript>().ReturnSupplyParty();  
+        
 
     }
 
@@ -86,6 +109,29 @@ public class RoomUIScript : MonoBehaviour {
     public void SendResourceGathering()
     {
         GatheringController.GetComponent<GatheringControllerScript>().SendOutGatherers(); 
+    }
+
+    public void AddSupplyPartyNum()//adds 1 to the number to Supply party you are sending out
+    {
+        if (GatheringController.GetComponent<GatheringControllerScript>().SupplyGatherNum < ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable)
+        {
+            GatheringController.GetComponent<GatheringControllerScript>().SupplyGatherNum++;
+        }
+        GatheringController.GetComponent<GatheringControllerScript>().DisplaySupplyPartyNum();
+    }
+
+    public void SubSupplyNum()
+    {
+        if (GatheringController.GetComponent<GatheringControllerScript>().SupplyGatherNum > 0)
+        {
+            GatheringController.GetComponent<GatheringControllerScript>().SupplyGatherNum--;
+        }
+        GatheringController.GetComponent<GatheringControllerScript>().DisplaySupplyPartyNum();
+    }
+
+    public void SendSupplyParty()
+    {
+        GatheringController.GetComponent<GatheringControllerScript>().SendOutSupplyParty();
     }
 
     public void Back2Menu()

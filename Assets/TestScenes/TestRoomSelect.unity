@@ -463,7 +463,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 87681074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900728841}
+        m_MethodName: Back2ResourcesPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &87681074
@@ -940,7 +952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColonistCount: 5
-  ColonistsAway: 0
+  ColResourceAway: 0
+  ColSupplyAway: 0
   ColonistsAvailable: 5
   ColResCount: 0
   ColMatCount: 0
@@ -3711,8 +3724,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GathererNum: 0
+  SupplyGatherNum: 0
   ColonyController: {fileID: 170716861}
   GatherNumTxt: {fileID: 1904654572}
+  SupplyPartyNumTxt: {fileID: 1119264960}
   Inventory: {fileID: 0}
 --- !u!4 &682972923
 Transform:
@@ -4254,7 +4269,7 @@ GameObject:
   - 114: {fileID: 799815078}
   - 114: {fileID: 799815077}
   m_Layer: 5
-  m_Name: MaterialsButton
+  m_Name: SuppliesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4316,7 +4331,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799815078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900728841}
+        m_MethodName: SelectSupply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &799815078
@@ -6409,7 +6436,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1178352603}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900728841}
+        m_MethodName: SendSupplyParty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1178352603
@@ -8205,6 +8244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d608db8526a6204459f22928bd63c1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ColonyController: {fileID: 170716861}
 --- !u!4 &1494874430
 Transform:
   m_ObjectHideFlags: 0
@@ -8249,7 +8289,7 @@ RectTransform:
   m_Father: {fileID: 1948570856}
   m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: .147000596, y: .252728999}
+  m_AnchorMax: {x: .144855723, y: .381961077}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -9152,7 +9192,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1711772548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900728841}
+        m_MethodName: AddSupplyPartyNum
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1711772548
@@ -10630,7 +10682,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1966487272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900728841}
+        m_MethodName: SubSupplyNum
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1966487272

@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ColonyEventScript : MonoBehaviour {
 
-	// Use this for initialization
+    public GameObject ColonyController; 
+    // Use this for initialization
 	void Start () {
 	
 	}
@@ -28,18 +29,21 @@ public class ColonyEventScript : MonoBehaviour {
             {
                 int GainInt = Random.Range(1, 3);
                 string Message = "A Colonist had " + GainInt + "Kid(s).";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt; 
                 print(Message); 
             }
             else if(ColEventInt02 <= 80)//people found your colony
             {
                 int GainInt = Random.Range(2, 4);
                 string Message = GainInt + " travelers have asked to join your colony";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt; 
                 print(Message); 
             }
             else if(ColEventInt02 <= 100)//joined neighbor colony
             {
                 int GainInt = Random.Range(10, 20);
                 string Message = "A neighbor Colony of " + GainInt + " has decided to join yours";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt; 
                 print(Message); 
             }
         }
@@ -50,35 +54,41 @@ public class ColonyEventScript : MonoBehaviour {
             {
                 int SickCols = Random.Range(1, (int)(ColonyNum/2));
                 string Message = SickCols + " Colonost(s) have gotten sick!";
+
                 print(Message); 
             }
             else if(ColEventInt01 <= 50)//Bandit Attack!
             {
                 int LossInt = Random.Range(1, (int)(ColonyNum / 2));
-                string Message = LossInt + "Colonist(s) were lost in a Bandit Attack!"; 
+                string Message = LossInt + "Colonist(s) were lost in a Bandit Attack!";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
+                print(Message); 
             }
             else if (ColEventInt01 <= 70)//Colonists left
             {
                 int LossInt = Random.Range(1, (int)(ColonyNum / 5));
                 string Message = LossInt + "Colonist(s) have left your colony.";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
                 print(Message); 
             }
             else if (ColEventInt01 <= 80)//civil war!
             {
                 int LossInt = Random.Range(1, (int)(ColonyNum / 3));
                 string Message = LossInt + "Colonist(s) were lost in a civil war that broke out!";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
                 print(Message); 
             }
             else if (ColEventInt01 <= 50)//Chemical Accident!
             {
                 int LossInt = Random.Range(1, 3);
                 string Message = LossInt + "Colonist(s) were lost in a chemical Accident!";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
                 print(Message); 
             }
         }
     }
     
-    public void GatheringEvent(int GatheringPartyNum)
+    public void GatheringEvent(int GatheringPartyNum, string PartyType)
     {
         int PlusOrNeg = Random.Range(0, 100); 
         if(PlusOrNeg <= 50)//Negative Gathering Event
@@ -92,18 +102,42 @@ public class ColonyEventScript : MonoBehaviour {
             {
                 int LossInt = Random.Range(1, GatheringPartyNum - 1);
                 string Message = "Bear Attack, " + LossInt + " were lost.";
+                if(PartyType == "Mat")
+                {
+                    ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway -= LossInt; 
+                }
+                else if(PartyType == "Supply")
+                {
+                    ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway -= LossInt;
+                }
                 print(Message); 
             }
             else if (EventInt <= 75)//wolf Attack
             {
                 int LossInt = Random.Range(1, GatheringPartyNum - 1);
                 string Message = "Wolf Attack, " + LossInt + " were lost.";
+                if (PartyType == "Mat")
+                {
+                    ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway -= LossInt;
+                }
+                else if (PartyType == "Supply")
+                {
+                    ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway -= LossInt;
+                }
                 print(Message);
             }
             else if (EventInt <= 100)//Bandit Attack
             {
                 int LossInt = Random.Range(1, GatheringPartyNum - 1);
                 string Message = "Bandits Attack, " + LossInt + " were lost.";
+                if (PartyType == "Mat")
+                {
+                    ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway -= LossInt;
+                }
+                else if (PartyType == "Supply")
+                {
+                    ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway -= LossInt;
+                }
                 print(Message);
             }
             else
@@ -123,18 +157,21 @@ public class ColonyEventScript : MonoBehaviour {
             {
                 int GainInt = 1;
                 string Message = "Party found a runaway.";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt; 
                 print(Message); 
             }
             else if (EventInt <= 90)//found a family
             {
                 int GainInt = Random.Range(2, 6); 
                 string Message = "Party found a family of " + GainInt + " While Gathering.";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt; 
                 print(Message);
             }
             else if (EventInt <= 100)//found a group
             {
                 int GainInt = Random.Range(5, 15);
                 string Message = "Party found a group of " + GainInt + " While Gathering.";
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt; 
                 print(Message);
             }
             else
