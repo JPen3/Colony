@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Events.cs" />
      <Compile Include="Assets\Scripts\GatheringControllerScript.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
+     <Compile Include="Assets\Scripts\InventoryRotationScript.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemDatabase.cs" />
      <Compile Include="Assets\Scripts\MenuUIScript.cs" />
