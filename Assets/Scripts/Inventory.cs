@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour {
 	public GUISkin skin;
 	public List<Item> inventory = new List<Item>();
 	public List<Item> slots = new List<Item>();
+	public List<Item> slotsCraft = new List<Item>();
 	public List<Item> craft = new List<Item>(new Item[]{new Item(),new Item(),new Item()});
 	private bool showInventory;
 	private bool showCraft;
@@ -33,7 +34,7 @@ public class Inventory : MonoBehaviour {
 		AddItem(7);
 		AddItem(1);
 		AddItem(2);
-		//AddItem(7);
+		AddItem(9);
 		//AddItem(6);
 	}
 
@@ -43,7 +44,7 @@ public class Inventory : MonoBehaviour {
 				showCraft = !showCraft;
 			}
 			showInventory = !showInventory;
-			print (showCraft);
+			//print (showCraft);
 		}
 		if(Input.GetButtonDown("Craft")){
 			/*if(!showCraft && showInventory){
@@ -107,6 +108,9 @@ public class Inventory : MonoBehaviour {
 		for (int x = 0; x < 3; x++) {
 			Rect slotCraft = new Rect (x * 60 + Screen.width/2-(slotsX*60/2), slotsY * 60 + 60, 50, 50);
 			GUI.Box(slotCraft, "",skin.GetStyle("Slot"));
+			//slotsCraft[x] = craft[x];
+			//Item item = slotsCraft[x];
+
 			Item item = craft[x];
 
 			//print ("Previsious inventory index is " + prevIndex);
@@ -134,6 +138,7 @@ public class Inventory : MonoBehaviour {
 					}
 					if(e.type == EventType.mouseUp){
 						if(draggingItem){
+							print("Released inventory item in craft 1");
 							//craft[prevIndexCraft] = craft[x];
 							craft[x] = draggedItem;
 							draggingItem = false;
@@ -152,19 +157,20 @@ public class Inventory : MonoBehaviour {
 				if(slotCraft.Contains(e.mousePosition)){
 					if(e.type == EventType.mouseUp){
 						if(draggingItem){
+							print("Released inventory item in craft 2");
 							craft[x] = draggedItem;
-							//draggingItem = false;
-							//draggedItem = null;
+							draggingItem = false;
+							draggedItem = null;
 						}
 						if(draggingItemCraft){
 							craft[x] = draggedItemCraft;
-							//draggingItemCraft = false;
-							//draggedItemCraft = null;
+							draggingItemCraft = false;
+							draggedItemCraft = null;
 						}
-						draggingItemCraft = false;
-						draggedItemCraft = null;
-						draggingItem = false;
-						draggedItem = null;
+						//draggingItemCraft = false;
+						//draggedItemCraft = null;
+						//draggingItem = false;
+						//draggedItem = null;
 					}
 				}
 			}
@@ -174,7 +180,7 @@ public class Inventory : MonoBehaviour {
 			
 			//i++;
 		}
-		print (draggingItem + " " +draggedItem.itemName);
+		//print (draggingItem + " " +draggedItem.itemName);
 	}
 
 	void DrawInventory(){
@@ -198,23 +204,44 @@ public class Inventory : MonoBehaviour {
 							draggedItem = item;
 							inventory[i] = new Item();
 						}
-						if(e.type == EventType.mouseUp && draggingItem){
+						/*if(e.type == EventType.mouseUp && draggingItem){
 							inventory[prevIndex] = inventory[i];
 							inventory[i] = draggedItem;
 							draggingItem = false;
 							draggedItem = null;
+						}*/
+
+						if(e.type == EventType.mouseUp){
+							if(draggingItem){
+								//craft[prevIndexCraft] = craft[x];
+								//craft[x] = draggedItem;
+								//draggingItem = false;
+								//draggedItem = null;
+
+								inventory[prevIndex] = inventory[i];
+								inventory[i] = draggedItem;
+								draggingItem = false;
+								draggedItem = null;
+							}
+							else if(draggingItemCraft){
+								craft[prevIndexCraft] = inventory[i];
+								inventory[i] = draggedItemCraft;
+								draggingItemCraft = false;
+								draggedItemCraft = null;
+							}
 						}
+
 						if(e.isMouse && e.type == EventType.mouseDown && e.button == 1){
-							print ("Clicked " + i);
+							//print ("Clicked " + i);
 							if(item.itemType == Item.ItemType.MATERIAL){
-								print ("Material");
+								//print ("Material");
 							}
 						}
 						if(item.itemRecipe != null){
 							for(int j = 0; j<item.itemRecipe.Count; j++){
 								int k = item.itemRecipe[j];
 								//RemoveItem(k);
-								print(InventoryContains(k));
+								//print(InventoryContains(k));
 								//print (item.itemID);
 							}
 						}

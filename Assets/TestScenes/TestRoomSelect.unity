@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &7033481
 GameObject:
@@ -1019,16 +1018,11 @@ MonoBehaviour:
   ColResourceAway: 0
   ColSupplyAway: 0
   ColonistsAvailable: 5
-  ColDeathCount: 0
-  ColSickCount: 0
   ColResCount: 0
   ColMatCount: 0
   TotalColsTxt: {fileID: 1076498322}
   ColsAwayTxt: {fileID: 1359986159}
   ColsHereTxt: {fileID: 181902021}
-  ColDeathTxt: {fileID: 857286351}
-  ColsSickTxt: {fileID: 1035748955}
-  ColInfermDeathTxt: {fileID: 352215917}
 --- !u!4 &170716863
 Transform:
   m_ObjectHideFlags: 0
@@ -5649,7 +5643,6 @@ MonoBehaviour:
   MaterialSendPanel: {fileID: 1883439164}
   MaterialSendCountTxt: {fileID: 0}
   MainPanel: {fileID: 1959146650}
-  ExitCheckPanel: {fileID: 111537154}
   WeekPanel: {fileID: 1521242157}
   EventController: {fileID: 1494874428}
 --- !u!224 &900728842
@@ -10365,6 +10358,7 @@ MonoBehaviour:
   skin: {fileID: 11400000, guid: dcfaed072221007499fde906972e7992, type: 2}
   inventory: []
   slots: []
+  slotsCraft: []
   craft:
   - itemName: 
     itemID: 0
@@ -11535,8 +11529,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  ignoreReversedGraphics: 1
+  blockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
