@@ -99,6 +99,9 @@ public class Inventory : MonoBehaviour {
 		if (draggingItem) {
 			GUI.DrawTexture(new Rect(e.mousePosition.x, e.mousePosition.y, 50, 50), draggedItem.itemIcon);
 		}
+		if (draggingItemCraft) {
+			GUI.DrawTexture(new Rect(e.mousePosition.x, e.mousePosition.y, 50, 50), draggedItemCraft.itemIcon);
+		}
 	}
 
 	void DrawCraft(){
