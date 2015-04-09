@@ -9278,6 +9278,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColonyController: {fileID: 170716861}
+  SickHealState: 50
+  SickInfectState: 10
+  SickDieState: 7
+  sickHealedNum: 0
+  sickInfectedNum: 0
+  sickDeathNum: 0
 --- !u!4 &1494874430
 Transform:
   m_ObjectHideFlags: 0

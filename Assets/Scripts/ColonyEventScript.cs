@@ -3,7 +3,17 @@ using System.Collections;
 
 public class ColonyEventScript : MonoBehaviour {
 
-    public GameObject ColonyController; 
+    public GameObject ColonyController;
+
+    //sickEvent Prob int Vars----------------
+    public int SickHealState = 50;
+    public int SickInfectState = 10;
+    public int SickDieState = 7;
+    //sickEvent result Vars-----------------
+    public int sickHealedNum = 0;
+    public int sickInfectedNum = 0;
+    public int sickDeathNum = 0; 
+
     // Use this for initialization
 	void Start () {
 	
@@ -52,7 +62,9 @@ public class ColonyEventScript : MonoBehaviour {
             int ColEventInt02 = Random.Range(0, 100); 
             if(ColEventInt02 <= 25)//sickness
             {
-                int SickCols = Random.Range(1, (int)(ColonyNum/2));
+                int SickCols = Random.Range(1, (int)(1+(ColonyNum/10)));
+                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= SickCols; 
+                ColonyController.GetComponent<ColonyControllerScript>().ColSickCount += SickCols; 
                 string Message = SickCols + " Colonost(s) have gotten sick!";
 
                 print(Message); 
@@ -62,6 +74,7 @@ public class ColonyEventScript : MonoBehaviour {
                 int LossInt = Random.Range(1, (int)(ColonyNum / 2));
                 string Message = LossInt + "Colonist(s) were lost in a Bandit Attack!";
                 ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
+                ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 print(Message); 
             }
             else if (ColEventInt01 <= 70)//Colonists left
@@ -69,6 +82,7 @@ public class ColonyEventScript : MonoBehaviour {
                 int LossInt = Random.Range(1, (int)(ColonyNum / 5));
                 string Message = LossInt + "Colonist(s) have left your colony.";
                 ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
+                ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 print(Message); 
             }
             else if (ColEventInt01 <= 80)//civil war!
@@ -76,6 +90,7 @@ public class ColonyEventScript : MonoBehaviour {
                 int LossInt = Random.Range(1, (int)(ColonyNum / 3));
                 string Message = LossInt + "Colonist(s) were lost in a civil war that broke out!";
                 ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
+                ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 print(Message); 
             }
             else if (ColEventInt01 <= 50)//Chemical Accident!
@@ -83,6 +98,7 @@ public class ColonyEventScript : MonoBehaviour {
                 int LossInt = Random.Range(1, 3);
                 string Message = LossInt + "Colonist(s) were lost in a chemical Accident!";
                 ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
+                ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 print(Message); 
             }
         }
@@ -104,11 +120,13 @@ public class ColonyEventScript : MonoBehaviour {
                 string Message = "Bear Attack, " + LossInt + " were lost.";
                 if(PartyType == "Mat")
                 {
-                    ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway -= LossInt; 
+                    ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway -= LossInt;
+                    ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 }
                 else if(PartyType == "Supply")
                 {
                     ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway -= LossInt;
+                    ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 }
                 print(Message); 
             }
@@ -119,10 +137,12 @@ public class ColonyEventScript : MonoBehaviour {
                 if (PartyType == "Mat")
                 {
                     ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway -= LossInt;
+                    ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 }
                 else if (PartyType == "Supply")
                 {
                     ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway -= LossInt;
+                    ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 }
                 print(Message);
             }
@@ -133,10 +153,12 @@ public class ColonyEventScript : MonoBehaviour {
                 if (PartyType == "Mat")
                 {
                     ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway -= LossInt;
+                    ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 }
                 else if (PartyType == "Supply")
                 {
                     ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway -= LossInt;
+                    ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 }
                 print(Message);
             }
@@ -179,6 +201,52 @@ public class ColonyEventScript : MonoBehaviour {
                 print("ERROR: EventInt Out of Range");
             }
             
+        }
+    }
+
+    public void SickEvent(int ColSickNum)
+    {
+        print("COlSickNum: " + ColSickNum); 
+        if(ColSickNum > 0)
+        {
+            sickHealedNum = 0;
+            sickInfectedNum = 0;
+            sickDeathNum = 0; 
+            
+            for (int i = 0; i < ColSickNum; i++)
+            {
+                print("SickNum: " + i);
+                int RandSick = Random.Range(0, 100);
+                if (RandSick <= SickHealState)
+                {
+                    sickHealedNum++;
+                }
+                else if (RandSick <= SickHealState + SickInfectState)
+                {
+                    //sickColonist has spread sickness to another if there are any more colonists present to get sick
+                    if (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable > 0)
+                    {
+                        sickInfectedNum++;
+                    }
+                }
+                else if (RandSick <= SickHealState + SickInfectState + SickDieState)
+                {
+                    sickDeathNum++;
+                }
+                else
+                {
+                    //all the sick peeps are still sick!!!
+                }
+            }
+            print("after sickness: " + sickHealedNum + " Colonists were healed | " + sickInfectedNum + " Colonists were infected | " + sickDeathNum + " were lost.");
+
+            ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += sickHealedNum;
+            ColonyController.GetComponent<ColonyControllerScript>().ColSickCount -= sickHealedNum;
+            ColonyController.GetComponent<ColonyControllerScript>().ColSickCount += sickInfectedNum;
+            ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= sickInfectedNum;
+            ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= sickDeathNum;
+            ColonyController.GetComponent<ColonyControllerScript>().ColSickCount -= sickDeathNum;
+            ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += sickDeathNum; 
         }
     }
 }

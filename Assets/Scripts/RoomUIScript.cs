@@ -12,6 +12,7 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject MaterialSendPanel;
     public GameObject MaterialSendCountTxt;
     public GameObject MainPanel;
+    public GameObject ExitCheckPanel; 
     public GameObject WeekPanel;
     public GameObject EventController; 
 
@@ -21,12 +22,27 @@ public class RoomUIScript : MonoBehaviour {
     // Use this for initialization
 	void Start () {
 		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
+        MainPanel.SetActive(true); 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    public void CheckExit()
+    {
+        ExitCheckPanel.SetActive(true); 
+        MainPanel.SetActive(false); 
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = true; 
+    }
+
+    public void ExitCheckNo()
+    {
+        ExitCheckPanel.SetActive(false);
+        MainPanel.SetActive(true); 
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = false; 
+    }
 
     public void BackToTop()//sends camera to lerp back to it's top view
     {
@@ -76,9 +92,11 @@ public class RoomUIScript : MonoBehaviour {
         }
         
         //lines after this point will restore the colonists you sent out for now, will go elsewhere at a later date
+        
+        EventController.GetComponent<ColonyEventScript>().ColonyEvent(ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
+        EventController.GetComponent<ColonyEventScript>().SickEvent(ColonyController.GetComponent<ColonyControllerScript>().ColSickCount);
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway;
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway;
-        EventController.GetComponent<ColonyEventScript>().ColonyEvent(ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
         ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable; 
         ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway = 0;
         ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway = 0;
