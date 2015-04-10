@@ -253,7 +253,9 @@ public class ColonyEventScript : MonoBehaviour {
                     //all the sick peeps are still sick!!!
                 }
             }
-            print("after sickness: " + sickHealedNum + " Colonists were healed | " + sickInfectedNum + " Colonists were infected | " + sickDeathNum + " were lost.");
+            string Message = "- after sickness: " + sickHealedNum + " Colonists were healed | " + sickInfectedNum + " Colonists were infected | " + sickDeathNum + " were lost.\n";
+            print(Message);
+            UserNoteScript.UserNote += Message; 
 
             ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += sickHealedNum;
             ColonyController.GetComponent<ColonyControllerScript>().ColSickCount -= sickHealedNum;
