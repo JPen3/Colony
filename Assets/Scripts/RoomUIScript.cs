@@ -12,7 +12,8 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject MaterialSendPanel;
     public GameObject MaterialSendCountTxt;
     public GameObject MainPanel;
-    public GameObject ExitCheckPanel; 
+    public GameObject ExitCheckPanel;
+    public GameObject NotePanel; 
     public GameObject WeekPanel;
     public GameObject EventController; 
 
@@ -52,6 +53,13 @@ public class RoomUIScript : MonoBehaviour {
 
 		inventory.SetShowInventory(false);
 		inventory.SetShowCraft(false);
+    }
+
+    public void NoteClose()
+    {
+        NotePanel.SetActive(false);
+        UserNoteScript.UserNote = null; 
+        BackToTop(); 
     }
 
     public void SelectResources()//brings up the resources panel
@@ -97,7 +105,10 @@ public class RoomUIScript : MonoBehaviour {
         EventController.GetComponent<ColonyEventScript>().SickEvent(ColonyController.GetComponent<ColonyControllerScript>().ColSickCount);
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway;
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway;
-        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable; 
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable;
+        MainPanel.SetActive(false);
+        UserNoteScript.updateNote = true;
+        NotePanel.SetActive(true); 
         ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway = 0;
         ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway = 0;
         GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
