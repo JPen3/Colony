@@ -24379,7 +24379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Welcome to the Colony Infermary
+  m_Text: Welcome to the Colony Infirmary
 --- !u!222 &917777257
 CanvasRenderer:
   m_ObjectHideFlags: 0
