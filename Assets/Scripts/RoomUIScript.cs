@@ -5,7 +5,8 @@ public class RoomUIScript : MonoBehaviour {
 
     public GameObject MainCamera;
     public GameObject ColonyController;
-    public GameObject GatheringController; 
+    public GameObject GatheringController;
+    public GameObject ConsumptionController; 
     public GameObject ResourcesPanel; 
     public GameObject ResourcesSendPanel;
     public GameObject ResourcesSendCountTxt; 
@@ -98,6 +99,8 @@ public class RoomUIScript : MonoBehaviour {
             print("Material Gathering: ");
             EventController.GetComponent<ColonyEventScript>().GatheringEvent(ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway, "Mat");
         }
+
+        ConsumptionController.GetComponent<ConsumptionScript>().ConsumptionUpdate(); 
         
         //lines after this point will restore the colonists you sent out for now, will go elsewhere at a later date
         
@@ -105,7 +108,7 @@ public class RoomUIScript : MonoBehaviour {
         EventController.GetComponent<ColonyEventScript>().SickEvent(ColonyController.GetComponent<ColonyControllerScript>().ColSickCount);
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway;
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway;
-        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable;
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().ColSickCount;
         MainPanel.SetActive(false);
         UserNoteScript.updateNote = true;
         NotePanel.SetActive(true); 

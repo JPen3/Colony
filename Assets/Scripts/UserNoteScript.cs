@@ -18,6 +18,7 @@ public class UserNoteScript : MonoBehaviour {
 	void Update () {
 	    if(updateNote)
         {
+            updateNote = false; 
             SendNote();
             print("Note Sent"); 
         }

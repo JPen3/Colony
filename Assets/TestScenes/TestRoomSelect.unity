@@ -2502,6 +2502,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 1932747742}
   UIPanel01: {fileID: 104559067}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &91230294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4439,6 +4441,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 1388712617}
   UIPanel01: {fileID: 1138506840}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &153966960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4710,10 +4714,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970946271a540894c9325d62125faef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColonistCount: 5
+  ColonistCount: 20
   ColResourceAway: 0
   ColSupplyAway: 0
-  ColonistsAvailable: 5
+  ColonistsAvailable: 15
   ColDeathCount: 0
   ColSickCount: 5
   ColResCount: 0
@@ -5138,7 +5142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -10704,8 +10708,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1787939245}
   m_RootOrder: 2
-  m_AnchorMin: {x: .314025939, y: .674592555}
-  m_AnchorMax: {x: .5, y: .805203676}
+  m_AnchorMin: {x: .191090554, y: .67452985}
+  m_AnchorMax: {x: .377064615, y: .805140972}
   m_AnchoredPosition: {x: .00265693665, y: -.000873565674}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -12357,7 +12361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -12835,6 +12839,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 1358153021}
   UIPanel01: {fileID: 1275956782}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &480354096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20252,6 +20258,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 351607984}
   UIPanel01: {fileID: 41941184}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &739914977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21618,6 +21626,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 803493770}
+  - 114: {fileID: 803493771}
   m_Layer: 0
   m_Name: ConsumptionController
   m_TagString: Untagged
@@ -21637,6 +21646,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
+--- !u!114 &803493771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803493769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e96396016fb244a40ce13f1723553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColonyController: {fileID: 170716861}
+  ColFoodTxt: {fileID: 412704000}
+  ColWaterTxt: {fileID: 1864562712}
+  ConFoodTxt: {fileID: 473231836}
+  ConWaterTxt: {fileID: 807836549}
+  TotalColFoodInt: 0
+  TotalColWaterInt: 0
+  ColFoodInt: 600
+  ColWaterInt: 192
+  ColFoodConsumeINT: 3
+  ColWaterConsumeINT: .5
 --- !u!1 &806052827
 GameObject:
   m_ObjectHideFlags: 0
@@ -24240,6 +24271,7 @@ MonoBehaviour:
   MainCamera: {fileID: 524620401}
   ColonyController: {fileID: 170716861}
   GatheringController: {fileID: 682972921}
+  ConsumptionController: {fileID: 803493769}
   ResourcesPanel: {fileID: 1275956782}
   ResourcesSendPanel: {fileID: 1969239414}
   ResourcesSendCountTxt: {fileID: 0}
@@ -25502,8 +25534,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1787939245}
   m_RootOrder: 1
-  m_AnchorMin: {x: .202208489, y: .647609591}
-  m_AnchorMax: {x: .314025939, y: .835003078}
+  m_AnchorMin: {x: .0782906413, y: .647010624}
+  m_AnchorMax: {x: .190108091, y: .834404111}
   m_AnchoredPosition: {x: 5.7220459e-06, y: .000190734863}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -37617,6 +37649,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 510897301}
   UIPanel01: {fileID: 2045912742}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &1399315637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42782,8 +42816,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1787939245}
   m_RootOrder: 3
-  m_AnchorMin: {x: .69068706, y: .64793545}
-  m_AnchorMax: {x: .80250448, y: .835328937}
+  m_AnchorMin: {x: .813397229, y: .647634208}
+  m_AnchorMax: {x: .925214648, y: .835027695}
   m_AnchoredPosition: {x: -1.33514404e-05, y: .00022315979}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -43449,6 +43483,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 1892424761}
   UIPanel01: {fileID: 938077273}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &1669318893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48880,8 +48916,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1787939245}
   m_RootOrder: 4
-  m_AnchorMin: {x: .5, y: .674592555}
-  m_AnchorMax: {x: .689501822, y: .805203676}
+  m_AnchorMin: {x: .623221338, y: .673799217}
+  m_AnchorMax: {x: .81272316, y: .804410338}
   m_AnchoredPosition: {x: .00253009796, y: -.000783920288}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -51351,6 +51387,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 235936379}
   UIPanel01: {fileID: 522092452}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &1990506054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51523,6 +51561,8 @@ MonoBehaviour:
   LerpPoint: {fileID: 280410852}
   UIPanel01: {fileID: 1208816137}
   UIPanel02: {fileID: 0}
+  ConsumptionController: {fileID: 0}
+  ColonyController: {fileID: 0}
 --- !u!65 &1992562656
 BoxCollider:
   m_ObjectHideFlags: 0

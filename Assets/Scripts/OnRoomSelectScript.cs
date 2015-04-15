@@ -9,6 +9,9 @@ public class OnRoomSelectScript : MonoBehaviour {
     public GameObject UIPanel02; 
 
 	private Inventory inventory;
+
+    public GameObject ConsumptionController;
+    public GameObject ColonyController; 
     
     // Use this for initialization
 	void Start () {
@@ -18,6 +21,8 @@ public class OnRoomSelectScript : MonoBehaviour {
         }
 
 		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
+        ConsumptionController = GameObject.Find("ConsumptionController");
+        ColonyController = GameObject.Find("ColonistController"); 
 	}
 	
 	// Update is called once per frame
@@ -49,6 +54,14 @@ public class OnRoomSelectScript : MonoBehaviour {
 					inventory.SetShowInventory(true);
 					inventory.SetShowCraft(true);
 				}
+                if(UIPanel01.name == "CafeteriaPanel")//when you click on cafateria room
+                {
+                    ConsumptionController.GetComponent<ConsumptionScript>().UpdateConsumerTxt();  
+                }
+                if(UIPanel01.name == "QuartersPanel")
+                {
+                    ColonyController.GetComponent<ColonyControllerScript>().UpdateQuartersStats(); 
+                }
             }
 			//print ("inventory");
 
