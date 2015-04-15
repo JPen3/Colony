@@ -17,11 +17,13 @@ public class ConsumptionScript : MonoBehaviour {
     public double ColWaterInt; 
 
     public double ColFoodConsumeINT;
-    public double ColWaterConsumeINT; 
+    public double ColWaterConsumeINT;
+
+    public int NoFoodWeek = 0; 
     
     // Use this for initialization
 	void Start () {
-        UpdateConsumerTxt();
+        //UpdateConsumerTxt();
 	}
 	
 	// Update is called once per frame
@@ -33,13 +35,16 @@ public class ConsumptionScript : MonoBehaviour {
     {
         if (ColWaterConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable <= ColWaterInt)
         {
+            print("ColCountWater: " + ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable); 
             ColWaterInt -= ColWaterConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable;
-            //print("water consumption: " + ColWaterConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistCount); 
+            print("water consumption: " + ColWaterConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable); 
         }
         else
         {
-            print("not enough water for current residence"); 
-            for(int i = 0; i < ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable; i++)
+            print("not enough water for current residence");
+            int waterStarvedInt = 0;
+            int ColCheckCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable;
+            for(int i = 0; i < ColCheckCount; i++)
             {
                 if(ColWaterInt - (ColWaterConsumeINT * days) >= 0)
                 {
@@ -47,10 +52,13 @@ public class ConsumptionScript : MonoBehaviour {
                 }
                 else
                 {
+                    waterStarvedInt++; 
                     ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable--;
                     ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount++; 
                 }
             }
+            string message = ">" + waterStarvedInt + " Colonists have left because you ran out of water.\n";
+            UserNoteScript.UserNote += message; 
         }
 
     }
@@ -59,13 +67,17 @@ public class ConsumptionScript : MonoBehaviour {
     {
         if (ColFoodConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistCount <= ColFoodInt)
         {
-            ColFoodInt -= ColFoodConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistCount;
-        //print("food consumption: " + ColFoodConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistCount);
+            print("ColCountFood: " + ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
+            ColFoodInt -= ColFoodConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable;
+            print("food consumption: " + ColFoodConsumeINT * days * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
         }
         else
         {
             print("not enough Food for for current residence");
-            for (int i = 0; i < ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable; i++)
+            int starvationDeathInt = 0;
+            NoFoodWeek++; 
+            int ColCheckCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable;
+            for (int i = 0; i < ColCheckCount; i++)
             {
                 if (ColFoodInt - (ColFoodConsumeINT * days) >= 0)
                 {
@@ -74,10 +86,28 @@ public class ConsumptionScript : MonoBehaviour {
                 }
                 else
                 {
-                    ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable--;
-                    ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount++;
+                    if(NoFoodWeek >= 3)
+                    {
+                        starvationDeathInt++;
+                        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable--;
+                        ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount++;
+                    }
                 }
+                print("col Check Count:" + i); 
             }
+            if(NoFoodWeek >= 3)
+            {
+                NoFoodWeek = 0; 
+                string message = ">" + starvationDeathInt + "Colonists have left because you ran out of food.\n";
+                print(message);
+                UserNoteScript.UserNote += message;
+            }
+            if(NoFoodWeek > 0)
+            {
+                string message = ">Your Colony has gone " + NoFoodWeek + " week(s) without food. " + (3 - NoFoodWeek) + " more week(s) and colonists will start to leave.\n";
+                UserNoteScript.UserNote += message; 
+            }
+
         }
     }
 
@@ -85,9 +115,9 @@ public class ConsumptionScript : MonoBehaviour {
     {
         ColFoodTxt.GetComponent<Text>().text = ":" + ColFoodInt + " lbs";
         ColWaterTxt.GetComponent<Text>().text = ColWaterInt + " gal:";
-        ConFoodTxt.GetComponent<Text>().text = "Food Consumption:" + ColFoodConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + " lbs/week";
+        ConFoodTxt.GetComponent<Text>().text = ColFoodConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + " lbs/week";
         print("FoodCon: " + ColFoodConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable); 
-        ConWaterTxt.GetComponent<Text>().text = "Water Consumption:" + ColWaterConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + " gal/week";
+        ConWaterTxt.GetComponent<Text>().text = ColWaterConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + " gal/week";
         print("WaterCon: " + ColWaterConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable); 
 
         
@@ -95,8 +125,12 @@ public class ConsumptionScript : MonoBehaviour {
 
     public void ConsumptionUpdate()
     {
-        ConsumeFood(7);
+        print("Colonists Available: " + ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
         ConsumeWater(7);
-        UpdateConsumerTxt(); 
+        if (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable > 0)
+        {
+            ConsumeFood(7);
+        }
+        //UpdateConsumerTxt(); 
     }
 }

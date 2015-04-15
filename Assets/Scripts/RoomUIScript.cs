@@ -89,6 +89,8 @@ public class RoomUIScript : MonoBehaviour {
     public void DayProgress()//will progress the game by one day
     {
         WeekPanel.GetComponent<DayPropScript>().DayInt++;
+        ConsumptionController.GetComponent<ConsumptionScript>().ConsumptionUpdate(); 
+
         if (ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway > 0)
         {
             print("Supply Party: ");
@@ -100,7 +102,7 @@ public class RoomUIScript : MonoBehaviour {
             EventController.GetComponent<ColonyEventScript>().GatheringEvent(ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway, "Mat");
         }
 
-        ConsumptionController.GetComponent<ConsumptionScript>().ConsumptionUpdate(); 
+        
         
         //lines after this point will restore the colonists you sent out for now, will go elsewhere at a later date
         

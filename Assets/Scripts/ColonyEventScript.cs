@@ -39,7 +39,7 @@ public class ColonyEventScript : MonoBehaviour {
             if(ColEventInt02 <= 50)//children
             {
                 int GainInt = Random.Range(1, 3);
-                string Message = ">A Colonist had " + GainInt + "Kid(s).\n";
+                string Message = ">A Colonist had " + GainInt + " kid(s).\n";
                 ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
                 UserNoteScript.UserNote += Message; 
                 print(Message); 
@@ -94,7 +94,7 @@ public class ColonyEventScript : MonoBehaviour {
             else if (ColEventInt01 <= 80)//civil war!
             {
                 int LossInt = Random.Range(1, (int)(ColonyNum / 3));
-                string Message = ">" + LossInt + "Colonist(s) were lost in a civil war that broke out!\n";
+                string Message = ">" + LossInt + " Colonist(s) were lost in a civil war that broke out!\n";
                 ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable -= LossInt;
                 ColonyController.GetComponent<ColonyControllerScript>().ColDeathCount += LossInt;
                 UserNoteScript.UserNote += Message; 
