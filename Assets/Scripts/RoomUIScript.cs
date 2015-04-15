@@ -172,4 +172,22 @@ public class RoomUIScript : MonoBehaviour {
     {
         Application.LoadLevel("StartScreen"); 
     }
+
+    public void AddGardener()
+    {
+        if (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount < ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable)
+        {
+            ColonyController.GetComponent<ColonyControllerScript>().GardenerCount++; 
+        }
+        ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt(); 
+    }
+
+    public void MinusGardener()
+    {
+        if (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount > 0)
+        {
+            ColonyController.GetComponent<ColonyControllerScript>().GardenerCount--;
+        }
+        ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt(); 
+    }
 }
