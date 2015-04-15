@@ -8,7 +8,12 @@ public class ConsumptionScript : MonoBehaviour {
     public GameObject ColFoodTxt;
     public GameObject ColWaterTxt;
     public GameObject ConFoodTxt;
-    public GameObject ConWaterTxt; 
+    public GameObject ConWaterTxt;
+    public GameObject CafProFoodTxt;
+    public GameObject CafProWaterTxt;
+    public GameObject GardProFoodTxt;
+    public GameObject GardProWaterTxt;
+    public GameObject GardenerCountTxt; 
 
     public double TotalColFoodInt;
     public double TotalColWaterInt; 
@@ -18,6 +23,9 @@ public class ConsumptionScript : MonoBehaviour {
 
     public double ColFoodConsumeINT;
     public double ColWaterConsumeINT;
+
+    public double ProFoodInt;
+    public double ProWaterInt; 
 
     public int NoFoodWeek = 0; 
     
@@ -132,5 +140,14 @@ public class ConsumptionScript : MonoBehaviour {
             ConsumeFood(7);
         }
         //UpdateConsumerTxt(); 
+    }
+
+    public void UpdateProductionTxt()
+    {
+        GardenerCountTxt.GetComponent<Text>().text = ColonyController.GetComponent<ColonyControllerScript>().GardenerCount.ToString(); 
+        CafProFoodTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount * 3 * 7 * 4) + " lbs/week";
+        CafProWaterTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount * 0.5 * 7 * 4) + " gal/week";
+        GardProFoodTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount * 3 * 7 * 4) + " lbs/week";
+        GardProWaterTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount * 0.5 * 7 * 4) + " gal/week"; 
     }
 }

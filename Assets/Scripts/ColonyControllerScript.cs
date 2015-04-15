@@ -12,6 +12,9 @@ public class ColonyControllerScript : MonoBehaviour {
     public int ColSickCount = 5; 
     public int ColResCount;
     public int ColMatCount;
+
+    public int GardenerCount;
+
     public GameObject TotalColsTxt;
     public GameObject ColsAwayTxt;
     public GameObject ColsHereTxt;

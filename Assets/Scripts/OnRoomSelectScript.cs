@@ -40,10 +40,8 @@ public class OnRoomSelectScript : MonoBehaviour {
             MainCamera.GetComponent<CameraLerpScript>().LerpTimer = 0.0f;
             if (UIPanel01 != null)
             {
-				//print (UIPanel01);
+                Invoke("printPanel", 1);
                 MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel.SetActive(false);
-                UIPanel01.SetActive(true);
-                MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = UIPanel01;
 
 				if(UIPanel01 == GameObject.Find("InventoryPanel"))
 				{
@@ -56,15 +54,28 @@ public class OnRoomSelectScript : MonoBehaviour {
 				}
                 if(UIPanel01.name == "CafeteriaPanel")//when you click on cafateria room
                 {
-                    ConsumptionController.GetComponent<ConsumptionScript>().UpdateConsumerTxt();  
+                    ConsumptionController.GetComponent<ConsumptionScript>().UpdateConsumerTxt();
+                    ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt(); 
                 }
                 if(UIPanel01.name == "QuartersPanel")
                 {
                     ColonyController.GetComponent<ColonyControllerScript>().UpdateQuartersStats(); 
                 }
+                if (UIPanel01.name == "GardenPanel")
+                {
+                    ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt(); 
+                }
             }
 			//print ("inventory");
 
         }
+    }
+
+    public void printPanel()
+    {
+        //print (UIPanel01);
+        
+        UIPanel01.SetActive(true);
+        MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = UIPanel01;
     }
 }
