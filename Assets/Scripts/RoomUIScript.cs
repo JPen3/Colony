@@ -60,7 +60,8 @@ public class RoomUIScript : MonoBehaviour {
     {
         NotePanel.SetActive(false);
         UserNoteScript.UserNote = null;
-        Invoke("Back2Top", (float)0.5);  
+        Invoke("Back2Top", (float)0.5);
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = false; 
     }
 
     public void SelectResources()//brings up the resources panel
@@ -113,7 +114,8 @@ public class RoomUIScript : MonoBehaviour {
         ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().ColSickCount + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount;
         MainPanel.SetActive(false);
         UserNoteScript.updateNote = true;
-        NotePanel.SetActive(true); 
+        NotePanel.SetActive(true);
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = true; //disables ability to click on a room
         ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway = 0;
         ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway = 0;
         GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
