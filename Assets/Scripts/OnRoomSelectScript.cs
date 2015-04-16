@@ -40,7 +40,7 @@ public class OnRoomSelectScript : MonoBehaviour {
             MainCamera.GetComponent<CameraLerpScript>().LerpTimer = 0.0f;
             if (UIPanel01 != null)
             {
-                Invoke("printPanel", 1);
+                Invoke("printPanel", (float)0.5);
                 MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel.SetActive(false);
 
 				if(UIPanel01 == GameObject.Find("InventoryPanel"))

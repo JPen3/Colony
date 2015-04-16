@@ -110,14 +110,15 @@ public class RoomUIScript : MonoBehaviour {
         EventController.GetComponent<ColonyEventScript>().SickEvent(ColonyController.GetComponent<ColonyControllerScript>().ColSickCount);
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway;
         ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway;
-        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().ColSickCount;
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount = ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().ColSickCount + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount;
         MainPanel.SetActive(false);
         UserNoteScript.updateNote = true;
         NotePanel.SetActive(true); 
         ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway = 0;
         ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway = 0;
         GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
-        GatheringController.GetComponent<GatheringControllerScript>().ReturnSupplyParty();  
+        GatheringController.GetComponent<GatheringControllerScript>().ReturnSupplyParty();
+        ConsumptionController.GetComponent<ConsumptionScript>().ProduceFoodWater(); 
         
 
     }
@@ -175,9 +176,10 @@ public class RoomUIScript : MonoBehaviour {
 
     public void AddGardener()
     {
-        if (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount < ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable)
+        if (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount < ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount)
         {
-            ColonyController.GetComponent<ColonyControllerScript>().GardenerCount++; 
+            ColonyController.GetComponent<ColonyControllerScript>().GardenerCount++;
+            ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable--; 
         }
         ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt(); 
     }
@@ -187,6 +189,7 @@ public class RoomUIScript : MonoBehaviour {
         if (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount > 0)
         {
             ColonyController.GetComponent<ColonyControllerScript>().GardenerCount--;
+            ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable++; 
         }
         ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt(); 
     }
