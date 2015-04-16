@@ -59,8 +59,8 @@ public class RoomUIScript : MonoBehaviour {
     public void NoteClose()
     {
         NotePanel.SetActive(false);
-        UserNoteScript.UserNote = null; 
-        BackToTop(); 
+        UserNoteScript.UserNote = null;
+        Invoke("Back2Top", (float)0.5);  
     }
 
     public void SelectResources()//brings up the resources panel

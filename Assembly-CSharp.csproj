@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\OnRoomSelectScript.cs" />
      <Compile Include="Assets\Scripts\RoomUIScript.cs" />
      <Compile Include="Assets\Scripts\UserNoteScript.cs" />
+     <Compile Include="Assets\Scripts\daQuickScript.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
