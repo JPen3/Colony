@@ -57,6 +57,10 @@ public class CameraLerpScript : MonoBehaviour {
         targetPoint = MainLerpPoint;
         isLerpin = true;
         LerpTimer = 0.0f;
+        Invoke("resetHasSelected", (float)0.5);
+    }
+    public void resetHasSelected()
+    {
         hasSelected = false; 
     }
 }
