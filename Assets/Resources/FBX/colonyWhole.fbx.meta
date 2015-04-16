@@ -623,6 +623,11 @@ ModelImporter:
     101234: woodPlank7
     101236: woodPlank8
     101238: woodPlank9
+    101240: garden
+    101242: garden 1
+    101244: group6
+    101246: pCube258
+    101248: pCube5
     400000: bin
     400002: bin10
     400004: bin11
@@ -1243,6 +1248,11 @@ ModelImporter:
     401234: woodPlank7
     401236: woodPlank8
     401238: woodPlank9
+    401240: garden
+    401242: garden 1
+    401244: group6
+    401246: pCube258
+    401248: pCube5
     2300000: bin
     2300002: bin10
     2300004: bin11
@@ -1862,6 +1872,9 @@ ModelImporter:
     2301232: woodPlank7
     2301234: woodPlank8
     2301236: woodPlank9
+    2301238: garden 1
+    2301240: pCube258
+    2301242: pCube5
     3300000: bin
     3300002: bin10
     3300004: bin11
@@ -2481,6 +2494,9 @@ ModelImporter:
     3301232: woodPlank7
     3301234: woodPlank8
     3301236: woodPlank9
+    3301238: garden 1
+    3301240: pCube258
+    3301242: pCube5
     4300000: building1OutWalls
     4300002: building1InWall
     4300004: building1InWall1
@@ -3100,6 +3116,9 @@ ModelImporter:
     4301232: pCube256
     4301234: pCube257
     4301236: pasted__woodPlank26
+    4301238: pCube5
+    4301240: garden
+    4301242: pCube258
     9500000: //RootNode
   materials:
     importMaterials: 1
