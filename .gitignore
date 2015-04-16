@@ -27,3 +27,6 @@ Colony-csharp.sln
 *.mdb
 Colony-csharp.sln
 Colony-csharp.sln
+Library/assetDatabase3
+Library/assetDatabase3
+*.dll
