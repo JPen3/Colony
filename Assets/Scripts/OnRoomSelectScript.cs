@@ -10,9 +10,11 @@ public class OnRoomSelectScript : MonoBehaviour {
 
 	private Inventory inventory;
 
+    public GameObject WeekCounter; 
     public GameObject ConsumptionController;
     public GameObject ColonyController;
-    public GameObject InventoryController; 
+    public GameObject InventoryController;
+    public GameObject UserNoteController; 
     
     // Use this for initialization
 	void Start () {
@@ -24,7 +26,9 @@ public class OnRoomSelectScript : MonoBehaviour {
 		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
         ConsumptionController = GameObject.Find("ConsumptionController");
         ColonyController = GameObject.Find("ColonistController");
-        InventoryController = GameObject.Find("TestingInventory"); 
+        InventoryController = GameObject.Find("TestingInventory");
+        UserNoteController = GameObject.Find("UserNoteController");
+        WeekCounter = GameObject.Find("WeekPanel"); 
 	}
 	
 	// Update is called once per frame
@@ -91,6 +95,12 @@ public class OnRoomSelectScript : MonoBehaviour {
         if (UIPanel01.name == "TestInventoryPanel02")
         {
             InventoryController.GetComponent<InventoryInteractScript>().DisplayInventory();
+        }
+        if(UIPanel01.name == "EntryPanel")
+        {
+            print("Journal Access"); 
+            UserNoteController.GetComponent<UserNoteScript>().DisplayWeekInt = WeekCounter.GetComponent<DayPropScript>().DayInt-1; 
+            UserNoteController.GetComponent<UserNoteScript>().DisplayJournalEntry(); 
         }
     }
 }

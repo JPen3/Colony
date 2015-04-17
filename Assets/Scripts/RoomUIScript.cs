@@ -16,7 +16,8 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject ExitCheckPanel;
     public GameObject NotePanel; 
     public GameObject WeekPanel;
-    public GameObject EventController; 
+    public GameObject EventController;
+    public GameObject UserNoteController; 
 
 	private Inventory inventory;
 
@@ -194,5 +195,23 @@ public class RoomUIScript : MonoBehaviour {
             ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable++; 
         }
         ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt(); 
+    }
+
+    public void AddJournalWeek()
+    {
+        if (UserNoteController.GetComponent<UserNoteScript>().DisplayWeekInt < WeekPanel.GetComponent<DayPropScript>().DayInt-1)
+        {
+            UserNoteController.GetComponent<UserNoteScript>().DisplayWeekInt++;
+            UserNoteController.GetComponent<UserNoteScript>().DisplayJournalEntry();
+        }
+    }
+
+    public void SubJournalWeek()
+    {
+        if (UserNoteController.GetComponent<UserNoteScript>().DisplayWeekInt > 1)
+        {
+            UserNoteController.GetComponent<UserNoteScript>().DisplayWeekInt--;
+            UserNoteController.GetComponent<UserNoteScript>().DisplayJournalEntry();
+        }
     }
 }
