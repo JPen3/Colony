@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\GatheringControllerScript.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory2.cs" />
+     <Compile Include="Assets\Scripts\InventoryActions.cs" />
      <Compile Include="Assets\Scripts\InventoryInteractScript.cs" />
      <Compile Include="Assets\Scripts\InventoryRotationScript.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\MenuUIScript.cs" />
      <Compile Include="Assets\Scripts\OnRoomSelectScript.cs" />
      <Compile Include="Assets\Scripts\RoomUIScript.cs" />
+     <Compile Include="Assets\Scripts\Testing2dColliders.cs" />
      <Compile Include="Assets\Scripts\UserNoteScript.cs" />
      <Compile Include="Assets\Scripts\daQuickScript.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />

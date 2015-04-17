@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; 
 
 public class InventoryInteractScript : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class InventoryInteractScript : MonoBehaviour {
 
     public GameObject[] Inv_Obj; 
 
-    public int[] InventoryCount = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+    public int[] InventoryCount = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
 
     
     // Use this for initialization
@@ -19,6 +20,9 @@ public class InventoryInteractScript : MonoBehaviour {
         {
             Inv_Obj[i] = GameObject.Find(("ObjPanel" + (i + 1)).ToString()); 
         }
+
+        UpdateInventory(); 
+        
         //Inv_Obj[0] = GameObject.Find("ObjPanel01"); 
             //Inv_Obj = GameObject.FindGameObjectsWithTag("InventoryIcon"); 
 	}
@@ -39,5 +43,15 @@ public class InventoryInteractScript : MonoBehaviour {
     public void testMethod()
     {
         print("the test has worked!!!!!!!");
+    }
+
+    public void UpdateInventory()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            Inv_Obj[i].GetComponentInChildren<Text>().text = InventoryCount[i].ToString();
+            Inv_Obj[i].GetComponent<InventoryActions>().Inventory_ID = i;
+            Inv_Obj[i].GetComponent<InventoryActions>().ItemCount = InventoryCount[i];
+        }
     }
 }
