@@ -9,7 +9,8 @@ public class GatheringControllerScript : MonoBehaviour {
     public GameObject ColonyController;
     public GameObject GatherNumTxt;
     public GameObject SupplyPartyNumTxt; 
-    public GameObject Inventory; 
+    public GameObject Inventory;
+    public GameObject InventoryController; 
     
     // Use this for initialization
 	void Start () {
@@ -17,6 +18,7 @@ public class GatheringControllerScript : MonoBehaviour {
         {
             Inventory = GameObject.Find("Inventory"); 
         }
+        InventoryController = GameObject.Find("TestingInventory"); 
 	}
 	
 	// Update is called once per frame
@@ -52,6 +54,13 @@ public class GatheringControllerScript : MonoBehaviour {
                 Inventory.GetComponent<Inventory>().AddItem(Random.Range(0, 9));
             }*/
         }
+        //generating random stack of three random items
+        int stack1 = Random.Range(0, 12);
+        int stack2 = Random.Range(0, 12);
+        int stack3 = Random.Range(0, 12);
+        InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack1] += Random.Range(1, 11);
+        InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack2] += Random.Range(1, 11);
+        InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack3] += Random.Range(1, 11);
     }
 
     public void DisplayGatherNum()
@@ -90,5 +99,13 @@ public class GatheringControllerScript : MonoBehaviour {
                 Inventory.GetComponent<Inventory>().AddItem(Random.Range(0, 9));
             }*/
         }
+
+        //generating random stack of three random items
+        int stack1 = Random.Range(0, 12);
+        int stack2 = Random.Range(0, 12);
+        int stack3 = Random.Range(0, 12);
+        InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack1] += Random.Range(1, 11);
+        InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack2] += Random.Range(1, 11);
+        InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack3] += Random.Range(1, 11);
     }
 }

@@ -1327,7 +1327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &56232954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2999,6 +2999,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &91230294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4361,6 +4362,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &153966960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4664,6 +4666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &165970691
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,6 +5870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &211763138
 GameObject:
   m_ObjectHideFlags: 0
@@ -9581,7 +9585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &341273861
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13614,6 +13618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &473401153
 GameObject:
   m_ObjectHideFlags: 0
@@ -14135,6 +14140,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &480354096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16611,6 +16617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &559610764
 GameObject:
   m_ObjectHideFlags: 0
@@ -20996,6 +21003,7 @@ MonoBehaviour:
   GatherNumTxt: {fileID: 1904654572}
   SupplyPartyNumTxt: {fileID: 1119264960}
   Inventory: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!4 &682972923
 Transform:
   m_ObjectHideFlags: 0
@@ -22657,6 +22665,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &739914977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24273,6 +24282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &799815075
 GameObject:
   m_ObjectHideFlags: 0
@@ -25227,6 +25237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &826724645
 GameObject:
   m_ObjectHideFlags: 0
@@ -30710,6 +30721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &1043442554
 GameObject:
   m_ObjectHideFlags: 0
@@ -33098,6 +33110,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1948570856}
     m_Modifications:
+    - target: {fileID: 11465480, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22465474, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -33169,6 +33185,82 @@ Prefab:
     - target: {fileID: 22465474, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
       propertyPath: m_Pivot.y
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 165496, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408168, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408184, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408188, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408170, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408172, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408178, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408180, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408182, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408176, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408186, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408174, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11408190, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: InventoryController
+      value: 
+      objectReference: {fileID: 1061885422}
+    - target: {fileID: 11465480, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465480, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465480, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 900728841}
+    - target: {fileID: 11465480, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465480, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 165488, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39d31ba9b9fe1e3489b4bed234789829, type: 2}
@@ -41781,6 +41873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &1396222348
 GameObject:
   m_ObjectHideFlags: 0
@@ -41885,6 +41978,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &1399315637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44770,6 +44864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &1517483386
 GameObject:
   m_ObjectHideFlags: 0
@@ -46424,6 +46519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &1580083567
 GameObject:
   m_ObjectHideFlags: 0
@@ -48337,6 +48433,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &1669318893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49077,7 +49174,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1672068713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 900728841}
+        m_MethodName: BackToTop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1672068713
@@ -50915,6 +51024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &1744825716
 GameObject:
   m_ObjectHideFlags: 0
@@ -54306,6 +54416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory_ID: 0
   ItemCount: 0
+  InventoryController: {fileID: 1061885422}
 --- !u!1 &1892424761
 GameObject:
   m_ObjectHideFlags: 0
@@ -56723,6 +56834,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &1990506054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56835,10 +56947,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 524620401}
   LerpPoint: {fileID: 280410852}
-  UIPanel01: {fileID: 1208816137}
+  UIPanel01: {fileID: 341273860}
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &1992562656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59602,6 +59715,7 @@ MonoBehaviour:
   UIPanel02: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
+  InventoryController: {fileID: 0}
 --- !u!65 &2141823356
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ public class OnRoomSelectScript : MonoBehaviour {
 	private Inventory inventory;
 
     public GameObject ConsumptionController;
-    public GameObject ColonyController; 
+    public GameObject ColonyController;
+    public GameObject InventoryController; 
     
     // Use this for initialization
 	void Start () {
@@ -22,7 +23,8 @@ public class OnRoomSelectScript : MonoBehaviour {
 
 		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
         ConsumptionController = GameObject.Find("ConsumptionController");
-        ColonyController = GameObject.Find("ColonistController"); 
+        ColonyController = GameObject.Find("ColonistController");
+        InventoryController = GameObject.Find("TestingInventory"); 
 	}
 	
 	// Update is called once per frame
@@ -72,6 +74,7 @@ public class OnRoomSelectScript : MonoBehaviour {
                     ConsumptionController.GetComponent<ConsumptionScript>().UpdateProductionTxt();
                     print("You're in the Garden");
                 }
+                
             }
 			//print ("inventory");
 
@@ -84,5 +87,10 @@ public class OnRoomSelectScript : MonoBehaviour {
         
         UIPanel01.SetActive(true);
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = UIPanel01;
+
+        if (UIPanel01.name == "TestInventoryPanel02")
+        {
+            InventoryController.GetComponent<InventoryInteractScript>().DisplayInventory();
+        }
     }
 }

@@ -14,14 +14,7 @@ public class InventoryInteractScript : MonoBehaviour {
     
     // Use this for initialization
 	void Start () {
-        Inv_Obj = new GameObject[12]; 
-        GameObject[] tempArray = GameObject.FindGameObjectsWithTag("InventoryIcon");
-        for (int i = 0; i < 12; i++ )
-        {
-            Inv_Obj[i] = GameObject.Find(("ObjPanel" + (i + 1)).ToString()); 
-        }
-
-        UpdateInventory(); 
+        
         
         //Inv_Obj[0] = GameObject.Find("ObjPanel01"); 
             //Inv_Obj = GameObject.FindGameObjectsWithTag("InventoryIcon"); 
@@ -43,6 +36,18 @@ public class InventoryInteractScript : MonoBehaviour {
     public void testMethod()
     {
         print("the test has worked!!!!!!!");
+    }
+
+    public void DisplayInventory()
+    {
+        Inv_Obj = new GameObject[12];
+        GameObject[] tempArray = GameObject.FindGameObjectsWithTag("InventoryIcon");
+        for (int i = 0; i < 12; i++)
+        {
+            Inv_Obj[i] = GameObject.Find(("ObjPanel" + (i + 1)).ToString());
+        }
+
+        UpdateInventory(); 
     }
 
     public void UpdateInventory()

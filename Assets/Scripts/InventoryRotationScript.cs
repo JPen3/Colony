@@ -38,9 +38,9 @@ public class InventoryRotationScript : MonoBehaviour {
         print(ScreenScaleFactor);
         IconObj.transform.localScale = new Vector3(Icon_Reg_Scale.x * ScreenScaleFactor, Icon_Reg_Scale.y * ScreenScaleFactor, Icon_Reg_Scale.z * ScreenScaleFactor);
         this.GetComponent<BoxCollider>().size = new Vector3(ObjPanel_Reg_Scale.x * ScreenScaleFactor, ObjPanel_Reg_Scale.y * ScreenScaleFactor, ObjPanel_Reg_Scale.z * ScreenScaleFactor);
-        Inv_Panel.transform.localScale = new Vector3(Inv_Panel_Scale.x * ScreenScaleFactor, Inv_Panel_Scale.y * ScreenScaleFactor, Inv_Panel_Scale.z*ScreenScaleFactor);
-        Inv_Panel.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 267 * ScreenScaleFactor); 
-        //Inv_Panel.transform.localScale = new Vector3((float)5 * ScreenScaleFactor, (float)5 * ScreenScaleFactor, (float)5 * ScreenScaleFactor); 
+        //Inv_Panel.transform.localScale = new Vector3(Inv_Panel_Scale.x * ScreenScaleFactor, Inv_Panel_Scale.y * ScreenScaleFactor, Inv_Panel_Scale.z*ScreenScaleFactor);
+        //Inv_Panel.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 267 * ScreenScaleFactor); 
+        Inv_Panel.transform.localScale = new Vector3((float)1.3 * ScreenScaleFactor, (float)1.3 * ScreenScaleFactor, (float)1.3 * ScreenScaleFactor); 
 	}
 
     void OnMouseOver()
