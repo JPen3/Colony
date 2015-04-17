@@ -6,7 +6,6 @@ TagManager:
   - Item Database
   - Inventory
   - InventoryIcon
-  - CraftIcon
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
