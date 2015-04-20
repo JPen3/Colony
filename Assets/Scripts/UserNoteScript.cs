@@ -43,6 +43,6 @@ public class UserNoteScript : MonoBehaviour {
     {
         JournalWeekTxt.GetComponent<Text>().text = ""; 
         JournalNoteTxt.GetComponent<Text>().text = JournalNotes[DisplayWeekInt].ToString();
-        JournalWeekTxt.GetComponent<Text>().text = "Week: " + DisplayWeekInt.ToString(); 
+        JournalWeekTxt.GetComponent<Text>().text = "Journal Week: " + DisplayWeekInt.ToString(); 
     }
 }

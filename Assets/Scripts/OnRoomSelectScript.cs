@@ -102,5 +102,10 @@ public class OnRoomSelectScript : MonoBehaviour {
             UserNoteController.GetComponent<UserNoteScript>().DisplayWeekInt = WeekCounter.GetComponent<DayPropScript>().DayInt-1; 
             UserNoteController.GetComponent<UserNoteScript>().DisplayJournalEntry(); 
         }
+        if (UIPanel01.name == "QuartersPanel" || UIPanel01.name == "InfirmaryPanel")
+        {
+            ColonyController.GetComponent<ColonyControllerScript>().UpdateQuartersStats();
+            //print("You're in the Quarters");
+        }
     }
 }

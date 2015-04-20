@@ -146,7 +146,8 @@ public class RoomUIScript : MonoBehaviour {
 
     public void SendResourceGathering()
     {
-        GatheringController.GetComponent<GatheringControllerScript>().SendOutGatherers(); 
+        GatheringController.GetComponent<GatheringControllerScript>().SendOutGatherers();
+        ConsumptionController.GetComponent<ConsumptionScript>().UpdateConsumerTxt(); 
     }
 
     public void AddSupplyPartyNum()//adds 1 to the number to Supply party you are sending out
@@ -170,6 +171,7 @@ public class RoomUIScript : MonoBehaviour {
     public void SendSupplyParty()
     {
         GatheringController.GetComponent<GatheringControllerScript>().SendOutSupplyParty();
+        ConsumptionController.GetComponent<ConsumptionScript>().UpdateConsumerTxt(); 
     }
 
     public void Back2Menu()

@@ -27,11 +27,16 @@ public class ConsumptionScript : MonoBehaviour {
     public double ProFoodInt;
     public double ProWaterInt; 
 
-    public int NoFoodWeek = 0; 
+    public int NoFoodWeek = 0;
+
+    public int weeksLeft = 0;
+
+    public int ConFoodInt;
+    public int ConWaterInt; 
     
     // Use this for initialization
 	void Start () {
-        //UpdateConsumerTxt();
+        UpdateConsumerTxt();
 	}
 	
 	// Update is called once per frame
@@ -127,6 +132,8 @@ public class ConsumptionScript : MonoBehaviour {
         //print("FoodCon: " + ColFoodConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
         ConWaterTxt.GetComponent<Text>().text = (ColWaterConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount)) + " gal/week";
         //print("WaterCon: " + ColWaterConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable); 
+        ConFoodInt = (int)(ColFoodConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount));
+        ConWaterInt = (int)(ColWaterConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount)); 
 
         
     }
@@ -167,5 +174,10 @@ public class ConsumptionScript : MonoBehaviour {
     {
         double ProWater = ColonyController.GetComponent<ColonyControllerScript>().GardenerCount * 0.5 * 7 * 4;
         return ProWater; 
+    }
+
+    public void GenWeeksLeft()
+    {
+        
     }
 }
