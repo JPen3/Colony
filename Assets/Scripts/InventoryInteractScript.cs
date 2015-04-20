@@ -7,9 +7,11 @@ public class InventoryInteractScript : MonoBehaviour {
     public int CraftNode01_ID = 0;
     public int CraftNode02_ID = 0;
 
-    public GameObject[] Inv_Obj; 
+    public GameObject[] Inv_Obj;
+    public GameObject[] Craft_Obj;
 
     public int[] InventoryCount = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+    public int[] CraftCount = { 0, 0, 0 };
 
     
     // Use this for initialization
