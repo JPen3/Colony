@@ -10,7 +10,9 @@ public class InventoryActions : MonoBehaviour {
     public GameObject ColorPanel; 
 
     public enum ItemType { Material, Tool, Item, Upgrade };
-    public ItemType item_type; 
+    public ItemType item_type;
+
+    public GameObject InfoPanel; 
     
 
     
@@ -59,7 +61,8 @@ public class InventoryActions : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        SubItemCount(); 
+        SubItemCount();
+        OpenWindow(); 
     }
 
     public void SubItemCount()
@@ -69,5 +72,12 @@ public class InventoryActions : MonoBehaviour {
             InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[Inventory_ID]--;
             InventoryController.GetComponent<InventoryInteractScript>().UpdateInventory(); 
         }
+    }
+
+    public void OpenWindow()
+    {
+        //GetComponent(RectTransform).anchoredPosition3D = Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+        InfoPanel.SetActive(true); 
+        InfoPanel.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(Input.mousePosition.x - (float)(Screen.width - InfoPanel.GetComponent<RectTransform>().rect.width*1.3), Input.mousePosition.y - (float)(InfoPanel.GetComponent<RectTransform>().rect.height * 1.3), -60); 
     }
 }
