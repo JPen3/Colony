@@ -16,7 +16,7 @@ public class daQuickScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        
 	}
 	
 	// Update is called once per frame
@@ -27,8 +27,8 @@ public class daQuickScript : MonoBehaviour {
     public void updateDaQuick()
     {
         ColNumTxt.GetComponent<Text>().text = ": " + ColonyController.GetComponent<ColonyControllerScript>().ColonistCount.ToString();
-        FoodNumTxt.GetComponent<Text>().text = ": " + (int)(ConsumerController.GetComponent<ConsumptionScript>().ColFoodInt / ConsumerController.GetComponent<ConsumptionScript>().ConFoodInt) + "\nweeks left";
-        WaterNumTxt.GetComponent<Text>().text = ": " + (int)(ConsumerController.GetComponent<ConsumptionScript>().ColWaterInt / ConsumerController.GetComponent<ConsumptionScript>().ConWaterInt) + "\nweeks left";
+        FoodNumTxt.GetComponent<Text>().text = ((int)(ConsumerController.GetComponent<ConsumptionScript>().ColFoodInt / ConsumerController.GetComponent<ConsumptionScript>().ConFoodInt)).ToString();
+        WaterNumTxt.GetComponent<Text>().text = ((int)(ConsumerController.GetComponent<ConsumptionScript>().ColWaterInt / ConsumerController.GetComponent<ConsumptionScript>().ConWaterInt)).ToString();
         //WeekTxt.GetComponent<Text>().text = WeekObj.GetComponent<DayPropScript>().DayInt.ToString(); 
     }
 }
