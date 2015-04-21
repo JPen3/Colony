@@ -6,13 +6,16 @@ public class InventoryActions : MonoBehaviour {
 
     public int Inventory_ID;
     public int ItemCount;
+    public string item_description; 
     public GameObject InventoryController;
     public GameObject ColorPanel; 
 
     public enum ItemType { Material, Tool, Item, Upgrade };
     public ItemType item_type;
 
-    public GameObject InfoPanel; 
+    public GameObject InfoPanel;
+
+    public bool canClick = true; 
     
 
     
@@ -61,8 +64,13 @@ public class InventoryActions : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        SubItemCount();
-        OpenWindow(); 
+        if(canClick)
+        {
+            canClick = false; 
+            OpenWindow();
+            InventoryController.GetComponent<InventoryInteractScript>().SelectedItem_ID = this.Inventory_ID; 
+        }
+         
     }
 
     public void SubItemCount()
@@ -77,7 +85,11 @@ public class InventoryActions : MonoBehaviour {
     public void OpenWindow()
     {
         //GetComponent(RectTransform).anchoredPosition3D = Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-        InfoPanel.SetActive(true); 
-        InfoPanel.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(Input.mousePosition.x - (float)(Screen.width - InfoPanel.GetComponent<RectTransform>().rect.width*1.3), Input.mousePosition.y - (float)(InfoPanel.GetComponent<RectTransform>().rect.height * 1.3), -60); 
+        InfoPanel.SetActive(true);
+        InventoryController.GetComponent<InventoryInteractScript>().ItemNameTxt.GetComponent<Text>().text = InventoryController.GetComponent<InventoryInteractScript>().Inv_name[Inventory_ID];
+        InventoryController.GetComponent<InventoryInteractScript>().ItemDescriptionTxt.GetComponent<Text>().text = InventoryController.GetComponent<InventoryInteractScript>().Inv_description[Inventory_ID];
+        InfoPanel.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(Input.mousePosition.x - (float)(Screen.width - InfoPanel.GetComponent<RectTransform>().rect.width*1.3), Input.mousePosition.y - (float)(InfoPanel.GetComponent<RectTransform>().rect.height * 1.3), -60);
+        InventoryController.GetComponent<InventoryInteractScript>().setUpCanClick(this.gameObject, false);
+        InventoryController.GetComponent<InventoryInteractScript>().SelectedItem_ID = 51; 
     }
 }
