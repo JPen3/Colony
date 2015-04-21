@@ -40,7 +40,7 @@ public class InventoryRotationScript : MonoBehaviour {
         this.GetComponent<BoxCollider>().size = new Vector3(ObjPanel_Reg_Scale.x * ScreenScaleFactor, ObjPanel_Reg_Scale.y * ScreenScaleFactor, ObjPanel_Reg_Scale.z * ScreenScaleFactor);
         //Inv_Panel.transform.localScale = new Vector3(Inv_Panel_Scale.x * ScreenScaleFactor, Inv_Panel_Scale.y * ScreenScaleFactor, Inv_Panel_Scale.z*ScreenScaleFactor);
         //Inv_Panel.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 267 * ScreenScaleFactor); 
-        Inv_Panel.transform.localScale = new Vector3((float)1.3 * ScreenScaleFactor, (float)1.3 * ScreenScaleFactor, (float)1.3 * ScreenScaleFactor);
+        //Inv_Panel.transform.localScale = new Vector3((float)1.2, (float)1.2, (float)1.2);
         //Inv_Panel.transform.localScale = new Vector3(1, 1, 1); 
 	}
 
