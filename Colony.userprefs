@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CanvasScaleScript.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\Game_Jam_Spring_2015\ProjectNoFrictionCapers\Assets\Scripts\MobileTiltScript.cs">
     <Files>
-      <File FileName="..\..\..\..\Games\Colony\Assets\Scripts\daQuickScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CanvasScaleScript.cs" Line="9" Column="1" />
+      <File FileName="..\Game_Jam_Spring_2015\ProjectNoFrictionCapers\Assets\Scripts\MobileTiltScript.cs" Line="47" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
