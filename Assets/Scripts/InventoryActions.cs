@@ -88,7 +88,7 @@ public class InventoryActions : MonoBehaviour {
         InfoPanel.SetActive(true);
         InventoryController.GetComponent<InventoryInteractScript>().ItemNameTxt.GetComponent<Text>().text = InventoryController.GetComponent<InventoryInteractScript>().Inv_name[Inventory_ID];
         InventoryController.GetComponent<InventoryInteractScript>().ItemDescriptionTxt.GetComponent<Text>().text = InventoryController.GetComponent<InventoryInteractScript>().Inv_description[Inventory_ID];
-        InfoPanel.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(Input.mousePosition.x - (float)(Screen.width - InfoPanel.GetComponent<RectTransform>().rect.width*1.3), Input.mousePosition.y - (float)(InfoPanel.GetComponent<RectTransform>().rect.height * 1.3), -60);
+        InfoPanel.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(Input.mousePosition.x - (float)(Screen.width - InfoPanel.GetComponent<RectTransform>().rect.width*1.3), Input.mousePosition.y - (float)(InfoPanel.GetComponent<RectTransform>().rect.height * 1.3), 0);
         InventoryController.GetComponent<InventoryInteractScript>().setUpCanClick(this.gameObject, false);
         InventoryController.GetComponent<InventoryInteractScript>().SelectedItem_ID = 51; 
     }
