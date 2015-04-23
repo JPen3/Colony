@@ -18673,7 +18673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 347b145ba6356274b988b329fa8ad088, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b6230905aa928d4db77367ea81a4d04, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25324,7 +25324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &760613070
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32988,19 +32988,20 @@ Prefab:
     - target: {fileID: 11442662, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 1b6230905aa928d4db77367ea81a4d04,
+        type: 3}
     - target: {fileID: 11442662, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 142790, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11442772, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 347b145ba6356274b988b329fa8ad088,
+      objectReference: {fileID: 21300000, guid: 1b6230905aa928d4db77367ea81a4d04,
         type: 3}
     - target: {fileID: 11442772, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
       propertyPath: m_Color.a
@@ -33057,6 +33058,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11442962, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442662, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -61358,8 +61363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1b6230905aa928d4db77367ea81a4d04, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
