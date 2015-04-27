@@ -15,7 +15,7 @@ public class MenuUIScript : MonoBehaviour {
 
     public void StartGame()
     {
-        Application.LoadLevel("TestRoomSelect"); 
+        Application.LoadLevel("RyanTestScene01"); 
     }
 
     public void ExitGame()

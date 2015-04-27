@@ -6,10 +6,15 @@ public class OnRoomSelectScript : MonoBehaviour {
     public GameObject MainCamera;
     public GameObject LerpPoint;
     public GameObject UIPanel01;
-    public GameObject UIPanel02; 
+    public GameObject UIPanel02;
+
+    public bool FirstVisit = true;
+
+    public GameObject HelpPanel; 
 
 	private Inventory inventory;
 
+    public GameObject RoomUIController; 
     public GameObject WeekCounter; 
     public GameObject ConsumptionController;
     public GameObject ColonyController;
@@ -51,7 +56,9 @@ public class OnRoomSelectScript : MonoBehaviour {
 
 				if(UIPanel01.name == "InventoryPanel")
 				{
-					inventory.SetShowInventory(true);
+					
+                    
+                    inventory.SetShowInventory(true);
                     print("You're in the Inventory");
                     print("Inventory is true");
 				}
@@ -85,12 +92,26 @@ public class OnRoomSelectScript : MonoBehaviour {
         }
     }
 
+    public void CloseHelpPanel()
+    {
+        HelpPanel.SetActive(false); 
+    }
+    
     public void printPanel()
     {
         //print (UIPanel01);
         
         UIPanel01.SetActive(true);
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = UIPanel01;
+
+        if(FirstVisit)
+        {
+            FirstVisit = false; 
+            if(HelpPanel != null)
+            {
+                HelpPanel.SetActive(true); 
+            }
+        }
 
         if (UIPanel01.name == "TestInventoryPanel02")
         {
