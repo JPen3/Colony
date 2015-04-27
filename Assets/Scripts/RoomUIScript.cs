@@ -7,7 +7,7 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject ColonyController;
     public GameObject GatheringController;
     public GameObject ConsumptionController; 
-    public GameObject ResourcesPanel; 
+    public GameObject ResourcesPanel;
     public GameObject ResourcesSendPanel;
     public GameObject ResourcesSendCountTxt; 
     public GameObject MaterialSendPanel;
@@ -16,6 +16,7 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject ExitCheckPanel;
     public GameObject NotePanel; 
     public GameObject WeekPanel;
+    public GameObject DaQuickHelpPanel;
     public GameObject EventController;
     public GameObject UserNoteController; 
 
@@ -25,7 +26,9 @@ public class RoomUIScript : MonoBehaviour {
     // Use this for initialization
 	void Start () {
 		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
-        MainPanel.SetActive(true); 
+        MainPanel.SetActive(true);
+        DaQuickHelpPanel.SetActive(true);
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = true; 
 	}
 	
 	// Update is called once per frame
@@ -33,6 +36,12 @@ public class RoomUIScript : MonoBehaviour {
 	
 	}
 
+    public void CloseDaQuickHelpPanel()
+    {
+        DaQuickHelpPanel.SetActive(false);
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = false; 
+    }
+    
     public void CheckExit()
     {
         ExitCheckPanel.SetActive(true); 
