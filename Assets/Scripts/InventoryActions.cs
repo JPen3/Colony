@@ -82,6 +82,15 @@ public class InventoryActions : MonoBehaviour {
         }
     }
 
+    public void AddItemCount()
+    {
+        if (InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[Inventory_ID] > 0)
+        {
+            InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[Inventory_ID]++;
+            InventoryController.GetComponent<InventoryInteractScript>().UpdateInventory();
+        }
+    }
+
     public void OpenWindow()
     {
         //GetComponent(RectTransform).anchoredPosition3D = Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);

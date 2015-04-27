@@ -49,6 +49,7 @@ public class RoomUIScript : MonoBehaviour {
 
     public void BackToTop()//sends camera to lerp back to it's top view
     {
+        print("Fuck is called");
         MainCamera.GetComponent<CameraLerpScript>().back2Top();
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = MainPanel; 
         MainPanel.SetActive(true);

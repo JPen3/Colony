@@ -6,6 +6,7 @@ public class InventoryInteractScript : MonoBehaviour {
 
     public int CraftNode01_ID = 51;
     public int CraftNode02_ID = 51;
+    public int CraftNode03_ID = 51;
 
     public GameObject[] Inv_Obj;
     public GameObject[] Craft_Obj;
@@ -50,13 +51,23 @@ public class InventoryInteractScript : MonoBehaviour {
     public void DisplayInventory()
     {
         Inv_Obj = new GameObject[12];
+        Craft_Obj = new GameObject[4];
+
         GameObject[] tempArray = GameObject.FindGameObjectsWithTag("InventoryIcon");
+        GameObject[] tempArray1 = GameObject.FindGameObjectsWithTag("CraftIcon");
+
         for (int i = 0; i < 12; i++)
         {
             Inv_Obj[i] = GameObject.Find(("ObjPanel" + (i + 1)).ToString());
         }
 
-        UpdateInventory(); 
+        for (int j = 0; j < Craft_Obj.Length; j++)
+        {
+            Craft_Obj[j] = GameObject.Find(("CraftNode" + j).ToString());
+        }
+
+        UpdateInventory();
+        UpdateCraft(); 
     }
 
     public void UpdateInventory()
@@ -66,6 +77,16 @@ public class InventoryInteractScript : MonoBehaviour {
             Inv_Obj[i].GetComponentInChildren<Text>().text = InventoryCount[i].ToString();
             Inv_Obj[i].GetComponent<InventoryActions>().Inventory_ID = i;
             Inv_Obj[i].GetComponent<InventoryActions>().ItemCount = InventoryCount[i];
+        }
+    }
+
+    public void UpdateCraft()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            //Craft_Obj[i].GetComponentInChildren<Text>().text = InventoryCount[i].ToString();
+            //Craft_Obj[i].GetComponent<InventoryActions>().Inventory_ID = i;
+            //Craft_Obj[i].GetComponent<InventoryActions>().ItemCount = InventoryCount[i];
         }
     }
 
@@ -100,6 +121,11 @@ public class InventoryInteractScript : MonoBehaviour {
             else if (CraftNode02_ID > 50)
             {
                 CraftNode02_ID = SelectedItem_ID;
+                Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
+            }
+            else if (CraftNode03_ID > 50)
+            {
+                CraftNode03_ID = SelectedItem_ID;
                 Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
             }
             else

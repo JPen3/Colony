@@ -88,8 +88,15 @@ public class OnRoomSelectScript : MonoBehaviour {
     public void printPanel()
     {
         //print (UIPanel01);
+        print(UIPanel02);
         
         UIPanel01.SetActive(true);
+
+        if (UIPanel02 != null) { 
+            UIPanel02.SetActive(true);
+            MainCamera.GetComponent<CameraLerpScript>().SecondUIPanel = UIPanel02;
+        }
+        
         MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = UIPanel01;
 
         if (UIPanel01.name == "TestInventoryPanel02")

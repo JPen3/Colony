@@ -5,7 +5,8 @@ public class CameraLerpScript : MonoBehaviour {
 
     public GameObject targetPoint;
     public GameObject MainLerpPoint;
-    public GameObject CurrentUIPanel; 
+    public GameObject CurrentUIPanel;
+    public GameObject SecondUIPanel; 
     public bool hasSelected = false; 
     public bool isLerpin = false;
     public float LerpTimer = 0.0f;
@@ -54,6 +55,10 @@ public class CameraLerpScript : MonoBehaviour {
     public void back2Top()
     {
         CurrentUIPanel.SetActive(false);
+        if (SecondUIPanel != null)
+        {
+            SecondUIPanel.SetActive(false);
+        }
         targetPoint = MainLerpPoint;
         isLerpin = true;
         LerpTimer = 0.0f;
