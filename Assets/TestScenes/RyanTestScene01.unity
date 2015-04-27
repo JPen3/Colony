@@ -2354,7 +2354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Here is the count for what week you are on. '
+  m_Text: 'The count for what week you are on. '
 --- !u!222 &64995374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2419,6 +2419,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 148548327}
   m_GameObject: {fileID: 66874859}
   m_Mesh: {fileID: 4300090, guid: 1c2d37c725c5b774b89353f0954d20c2, type: 3}
+--- !u!1 &67124935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 67124936}
+  - 222: {fileID: 67124938}
+  - 114: {fileID: 67124937}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &67124936
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 67124935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1528650186}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .0543265715, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &67124937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 67124935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2c191e741ea7ca9448873c08b6f2dc22, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 3
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'the number of colonists that you have lost. '
+--- !u!222 &67124938
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 67124935}
 --- !u!1 &68434004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5633,8 +5699,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 722838386}
   m_RootOrder: 3
-  m_AnchorMin: {x: .471050024, y: .429863423}
-  m_AnchorMax: {x: .519406199, y: .508329749}
+  m_AnchorMin: {x: .712525785, y: .433544606}
+  m_AnchorMax: {x: .76088196, y: .512010932}
   m_AnchoredPosition: {x: .000161170959, y: .000442504883}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -5650,7 +5716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6195,7 +6261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6297,7 +6363,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203933629}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_AnchorMin: {x: .0692587048, y: .772533715}
   m_AnchorMax: {x: .117614865, y: .851000011}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -6315,7 +6381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6904,9 +6970,7 @@ RectTransform:
   m_LocalScale: {x: .999999881, y: 1, z: 1}
   m_Children:
   - {fileID: 1117001445}
-  - {fileID: 611783051}
   - {fileID: 1658963672}
-  - {fileID: 1862008951}
   - {fileID: 1931973410}
   - {fileID: 487390233}
   - {fileID: 1201804150}
@@ -8460,7 +8524,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This displays the total number of colonists you have. '
+  m_Text: 'The total number of colonist available. '
 --- !u!222 &254255257
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10151,7 +10215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10372,7 +10436,7 @@ RectTransform:
   m_LocalScale: {x: 1.00004816, y: 1.0000484, z: 1.0000484}
   m_Children: []
   m_Father: {fileID: 203933629}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_AnchorMin: {x: .874007821, y: .785886586}
   m_AnchorMax: {x: .922363997, y: .864352882}
   m_AnchoredPosition: {x: .000161170959, y: .000442504883}
@@ -10390,7 +10454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -11265,74 +11329,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 683402459}
   m_GameObject: {fileID: 330166224}
---- !u!1 &333399230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 333399231}
-  - 222: {fileID: 333399233}
-  - 114: {fileID: 333399232}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &333399231
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333399230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1862008951}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .0543265715, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &333399232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333399230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 2c191e741ea7ca9448873c08b6f2dc22, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 300
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Here is your firewood value. Like your food and water it is converted into
-    weeks left. Your colony cannot survive without a heat source to cook food and
-    stay warm. '
---- !u!222 &333399233
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333399230}
 --- !u!1 &333481395
 GameObject:
   m_ObjectHideFlags: 0
@@ -12386,8 +12382,8 @@ RectTransform:
   - {fileID: 1398691411}
   m_Father: {fileID: 722838386}
   m_RootOrder: 0
-  m_AnchorMin: {x: .0121264588, y: .475997686}
-  m_AnchorMax: {x: .11588566, y: .790383101}
+  m_AnchorMin: {x: .0117415022, y: .506431818}
+  m_AnchorMax: {x: .115500703, y: .723084688}
   m_AnchoredPosition: {x: -.00233840942, y: -.00206565857}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -13857,8 +13853,8 @@ RectTransform:
   - {fileID: 254255255}
   m_Father: {fileID: 722838386}
   m_RootOrder: 9
-  m_AnchorMin: {x: .0119879674, y: .120655119}
-  m_AnchorMax: {x: .115747169, y: .435040534}
+  m_AnchorMin: {x: .0119879674, y: .214081109}
+  m_AnchorMax: {x: .11474359, y: .435040534}
   m_AnchoredPosition: {x: -.00326061249, y: -.00334739685}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -14051,7 +14047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -16465,7 +16461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -17412,8 +17408,8 @@ RectTransform:
   m_Children:
   - {fileID: 678257172}
   m_Father: {fileID: 203933629}
-  m_RootOrder: 5
-  m_AnchorMin: {x: .823792994, y: .300058216}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .814773202, y: .296315879}
   m_AnchorMax: {x: .993054211, y: .775379956}
   m_AnchoredPosition: {x: -.00038433075, y: .00048828125}
   m_SizeDelta: {x: 0, y: 0}
@@ -18468,6 +18464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1948570856}
+  - {fileID: 1560302013}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &525532667
@@ -19896,8 +19893,8 @@ RectTransform:
   - {fileID: 1684228427}
   m_Father: {fileID: 722838386}
   m_RootOrder: 2
-  m_AnchorMin: {x: .7486341, y: .0253927857}
-  m_AnchorMax: {x: .943278253, y: .202190697}
+  m_AnchorMin: {x: .721580982, y: .0195466615}
+  m_AnchorMax: {x: .916225135, y: .196344569}
   m_AnchoredPosition: {x: -.00233840942, y: -.00206565857}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -22469,68 +22466,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 148548327}
   m_GameObject: {fileID: 611532228}
   m_Mesh: {fileID: 4300788, guid: 1c2d37c725c5b774b89353f0954d20c2, type: 3}
---- !u!1 &611783050
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 611783051}
-  - 222: {fileID: 611783053}
-  - 114: {fileID: 611783052}
-  m_Layer: 5
-  m_Name: FoodTxt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &611783051
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611783050}
-  m_LocalRotation: {x: -4.83866074e-07, y: 1.66100122e-07, z: 4.72646406e-07, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .000241033282}
-  m_LocalScale: {x: 1.0000484, y: 1.0000484, z: 1.0000484}
-  m_Children:
-  - {fileID: 1090459183}
-  m_Father: {fileID: 203933629}
-  m_RootOrder: 1
-  m_AnchorMin: {x: .169367105, y: .296314448}
-  m_AnchorMax: {x: .338628352, y: .771636188}
-  m_AnchoredPosition: {x: -.000220298767, y: 5.14984131e-05}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &611783052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611783050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &611783053
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611783050}
 --- !u!1 &612996578
 GameObject:
   m_ObjectHideFlags: 0
@@ -22659,7 +22594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -22768,7 +22703,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .5
+  m_Intensity: .25
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -23084,7 +23019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -25001,9 +24936,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Here is your next week button. It allows you to progress your colony by
-    one week at a time. Make sure you assign your colonists weekly roles before you
-    click it. '
+  m_Text: 'The next week button allows you to progress your colony by one week at
+    a time. Make sure you assign your colonists weekly roles before you click it. '
 --- !u!222 &678257174
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25698,6 +25632,22 @@ Prefab:
     - target: {fileID: 142670, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22442664, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 22442860, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22442878, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455878, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f71bae7bcee66cb40b4e10b17a0e9ba6, type: 2}
@@ -27055,6 +27005,7 @@ RectTransform:
   - {fileID: 1772666939}
   - {fileID: 1178844135}
   - {fileID: 419730392}
+  - {fileID: 1528650186}
   m_Father: {fileID: 1948570856}
   m_RootOrder: 22
   m_AnchorMin: {x: 0, y: 0}
@@ -27551,7 +27502,7 @@ MonoBehaviour:
   UIPanel01: {fileID: 41941184}
   UIPanel02: {fileID: 0}
   FirstVisit: 1
-  HelpPanel: {fileID: 0}
+  HelpPanel: {fileID: 722838385}
   RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
@@ -31852,7 +31803,7 @@ RectTransform:
   m_LocalScale: {x: 1.00004816, y: 1.0000484, z: 1.0000484}
   m_Children: []
   m_Father: {fileID: 203933629}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_AnchorMin: {x: .158580303, y: .094448179}
   m_AnchorMax: {x: .206936479, y: .172914475}
   m_AnchoredPosition: {x: .000205993652, y: .000444412231}
@@ -31870,7 +31821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -34910,7 +34861,7 @@ RectTransform:
   m_LocalScale: {x: 1.00004816, y: 1.0000484, z: 1.0000484}
   m_Children: []
   m_Father: {fileID: 203933629}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_AnchorMin: {x: .229494438, y: .781405628}
   m_AnchorMax: {x: .277850598, y: .859871924}
   m_AnchoredPosition: {x: 7.15255737e-05, y: .00012588501}
@@ -34928,7 +34879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -35324,8 +35275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Here is your menu button. It can take you back to the main menu if you
-    so choose. '
+  m_Text: 'The menu button can take you back to the main menu if you so choose. '
 --- !u!222 &959427291
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37692,7 +37642,7 @@ RectTransform:
   m_Children:
   - {fileID: 1002971829}
   m_Father: {fileID: 203933629}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_AnchorMin: {x: .606118262, y: .0499231331}
   m_AnchorMax: {x: .960394263, y: .244967684}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -38432,7 +38382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -39069,74 +39019,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 683402459}
   m_GameObject: {fileID: 1089590325}
---- !u!1 &1090459182
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1090459183}
-  - 222: {fileID: 1090459185}
-  - 114: {fileID: 1090459184}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1090459183
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1090459182}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 611783051}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .0543265715, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1090459184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1090459182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 2c191e741ea7ca9448873c08b6f2dc22, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 300
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Here is your food value on your quick bar. This value is converetd into
-    how many weeks of food you have left based on how many colonists you have. Your
-    colony can survive at most 3 weeks without food. '
---- !u!222 &1090459185
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1090459182}
 --- !u!1 &1091740355
 GameObject:
   m_ObjectHideFlags: 0
@@ -39596,8 +39478,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1658963672}
   m_RootOrder: 0
-  m_AnchorMin: {x: .0543265715, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: .0399612561, y: 0}
+  m_AnchorMax: {x: .96345228, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -39621,14 +39503,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 3
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Here is your water value on your quick bar. Like you food value it is also
-    converted into how many weeks you have left of that consumable. Your colony can
-    only go a week without water. '
+  m_Text: 'These three items are consumed weekly. Having enough of all three of these
+    consumables is key to surviving. You can see how many weeks of each you have. '
 --- !u!222 &1098787095
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40531,7 +40412,7 @@ RectTransform:
   m_LocalScale: {x: 1.00004816, y: 1.0000484, z: 1.0000484}
   m_Children: []
   m_Father: {fileID: 203933629}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_AnchorMin: {x: .714702725, y: .784044206}
   m_AnchorMax: {x: .763058901, y: .862510502}
   m_AnchoredPosition: {x: 7.82012939e-05, y: .000495910645}
@@ -40549,7 +40430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -42333,7 +42214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -42753,7 +42634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -43338,7 +43219,7 @@ RectTransform:
   m_Children:
   - {fileID: 959427289}
   m_Father: {fileID: 203933629}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_AnchorMin: {x: .225564316, y: .0234646499}
   m_AnchorMax: {x: .474727094, y: .264608473}
   m_AnchoredPosition: {x: -.000280380249, y: .000804901123}
@@ -44434,7 +44315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -46553,8 +46434,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Here is your total colonist count on your quick bar. It is every colonist
-    out gathering, sick, or just laying around in your colony. '
+  m_Text: 'The total colonist count on your quick bar. It is every colonist out gathering,
+    sick, or just laying around in your colony. '
 --- !u!222 &1291661558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47535,7 +47416,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1990506053}
+      - m_Target: {fileID: 739914976}
         m_MethodName: CloseHelpPanel
         m_Mode: 1
         m_Arguments:
@@ -50606,7 +50487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This displays the total number of colonists you have. '
+  m_Text: 'The total number of colonists you have. '
 --- !u!222 &1398691413
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -51122,7 +51003,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1410300743}
-  m_LocalRotation: {x: 1.14940002e-09, y: -3.46348994e-09, z: 1, w: -3.95762711e-08}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: .000434351474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -51145,7 +51026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -51525,7 +51406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -54685,6 +54566,68 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 683402459}
   m_GameObject: {fileID: 1527357593}
+--- !u!1 &1528650183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1528650186}
+  - 222: {fileID: 1528650185}
+  - 114: {fileID: 1528650184}
+  m_Layer: 5
+  m_Name: LossTxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1528650184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528650183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1528650185
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528650183}
+--- !u!224 &1528650186
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528650183}
+  m_LocalRotation: {x: -8.73246734e-07, y: 7.91473909e-08, z: 1.38127191e-07, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -.000488394522}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 67124936}
+  m_Father: {fileID: 722838386}
+  m_RootOrder: 10
+  m_AnchorMin: {x: .538063049, y: .224139556}
+  m_AnchorMax: {x: .765363693, y: .408451498}
+  m_AnchoredPosition: {x: -.00127887726, y: -.000566482544}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &1528906135
 GameObject:
   m_ObjectHideFlags: 0
@@ -55091,7 +55034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -55661,6 +55604,92 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 683402459}
   m_GameObject: {fileID: 1560182242}
+--- !u!1 &1560302012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1560302013}
+  - 82: {fileID: 1560302014}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1560302013
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560302012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.57000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 524620407}
+  m_RootOrder: 1
+--- !u!82 &1560302014
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560302012}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 422813f545d1acd4d9d550edae17cb99, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .699999988
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1560879965
 GameObject:
   m_ObjectHideFlags: 0
@@ -58401,7 +58430,7 @@ GameObject:
   - 222: {fileID: 1658963674}
   - 114: {fileID: 1658963673}
   m_Layer: 5
-  m_Name: WaterTxt
+  m_Name: ConsumablesTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58419,9 +58448,9 @@ RectTransform:
   m_Children:
   - {fileID: 1098787093}
   m_Father: {fileID: 203933629}
-  m_RootOrder: 2
-  m_AnchorMin: {x: .339150101, y: .296273321}
-  m_AnchorMax: {x: .508411348, y: .771595061}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .186265171, y: .435844749}
+  m_AnchorMax: {x: .649385273, y: .771595061}
   m_AnchoredPosition: {x: -.000277519226, y: .000190734863}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -62256,7 +62285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -62555,7 +62584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -63854,7 +63883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -64369,7 +64398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -65084,7 +65113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -65339,68 +65368,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 148548327}
   m_GameObject: {fileID: 1861142887}
   m_Mesh: {fileID: 4301168, guid: 1c2d37c725c5b774b89353f0954d20c2, type: 3}
---- !u!1 &1862008950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1862008951}
-  - 222: {fileID: 1862008953}
-  - 114: {fileID: 1862008952}
-  m_Layer: 5
-  m_Name: FireTxt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1862008951
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1862008950}
-  m_LocalRotation: {x: -4.83866074e-07, y: 1.66100122e-07, z: 4.72646406e-07, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .000192826628}
-  m_LocalScale: {x: 1.0000484, y: 1.0000484, z: 1.0000484}
-  m_Children:
-  - {fileID: 333399231}
-  m_Father: {fileID: 203933629}
-  m_RootOrder: 3
-  m_AnchorMin: {x: .508508444, y: .296141535}
-  m_AnchorMax: {x: .677769661, y: .771463275}
-  m_AnchoredPosition: {x: -.000168800354, y: -.000247955322}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1862008952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1862008950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1862008953
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1862008950}
 --- !u!1 &1863164118
 GameObject:
   m_ObjectHideFlags: 0
@@ -65476,7 +65443,7 @@ GameObject:
   - 222: {fileID: 1864427608}
   - 114: {fileID: 1864427607}
   m_Layer: 5
-  m_Name: LossTxt
+  m_Name: AwayTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65495,8 +65462,8 @@ RectTransform:
   - {fileID: 1911590652}
   m_Father: {fileID: 722838386}
   m_RootOrder: 1
-  m_AnchorMin: {x: .687702, y: .297211826}
-  m_AnchorMax: {x: .914681256, y: .5}
+  m_AnchorMin: {x: .764717937, y: .409826189}
+  m_AnchorMax: {x: .991697192, y: .612614334}
   m_AnchoredPosition: {x: -.00038433075, y: .00048828125}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -67110,8 +67077,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This displays the number of colonists that yyou have lost over the couse
-    of developing your colony. '
+  m_Text: 'The number of colonists that are out gathering. '
 --- !u!222 &1911590654
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -67391,9 +67357,9 @@ RectTransform:
   m_Children:
   - {fileID: 64995372}
   m_Father: {fileID: 203933629}
-  m_RootOrder: 4
-  m_AnchorMin: {x: .678165853, y: .60809356}
-  m_AnchorMax: {x: .822231829, y: .772777855}
+  m_RootOrder: 2
+  m_AnchorMin: {x: .657878458, y: .606454432}
+  m_AnchorMax: {x: .801944435, y: .771138728}
   m_AnchoredPosition: {x: -.000465393066, y: 9.15527344e-05}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -68291,7 +68257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -68699,7 +68665,7 @@ RectTransform:
   m_LocalScale: {x: 1.00004816, y: 1.0000484, z: 1.0000484}
   m_Children: []
   m_Father: {fileID: 203933629}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_AnchorMin: {x: .389125347, y: .769475043}
   m_AnchorMax: {x: .437481523, y: .847941339}
   m_AnchoredPosition: {x: .000199317932, y: 7.62939453e-06}
@@ -68717,7 +68683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -69425,7 +69391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -72459,7 +72425,7 @@ RectTransform:
   m_LocalScale: {x: 1.00004816, y: 1.0000484, z: 1.0000484}
   m_Children: []
   m_Father: {fileID: 203933629}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_AnchorMin: {x: .557762086, y: .77902025}
   m_AnchorMax: {x: .606118262, y: .857486546}
   m_AnchoredPosition: {x: .000140190125, y: .000259399414}
@@ -72477,7 +72443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .054065749, g: .397029132, b: .735294104, a: 1}
   m_Sprite: {fileID: 21300000, guid: 2170dd448f6b2e045842cbcfc07ada4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
