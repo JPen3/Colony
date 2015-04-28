@@ -13,6 +13,7 @@ public class ConsumptionScript : MonoBehaviour {
     public GameObject ConFireTxt; 
     public GameObject CafProFoodTxt;
     public GameObject CafProWaterTxt;
+    public GameObject CafProFireTxt; 
     public GameObject GardProFoodTxt;
     public GameObject GardProWaterTxt;
     public GameObject GardProFireTxt; 
@@ -84,6 +85,12 @@ public class ConsumptionScript : MonoBehaviour {
             UserNoteScript.UserNote += message; 
         }
 
+        if (ColWaterConsumeINT * days * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount) >= ColWaterInt)
+        {
+            string message02 = "> your colony is running low on water, your colonists may start to leave if you run out.";
+            UserNoteScript.UserNote += message02; 
+        }
+
     }
 
     public void ConsumeFire(int days)
@@ -114,6 +121,12 @@ public class ConsumptionScript : MonoBehaviour {
             }
             string message = ">" + FireColdInt + " Colonists have left because you ran out of fire wood.\n";
             UserNoteScript.UserNote += message;
+        }
+
+        if (ColFireConsumeINT * days * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount) >= colFireInt)
+        {
+            string message02 = "> Your colony is running low on wood, if you run out your colony will freeze and leave.\n";
+            UserNoteScript.UserNote += message02; 
         }
 
     }
@@ -170,10 +183,12 @@ public class ConsumptionScript : MonoBehaviour {
     {
         ColFoodTxt.GetComponent<Text>().text = ":" + ColFoodInt + " lbs";
         ColWaterTxt.GetComponent<Text>().text = ColWaterInt + " gal:";
-        ConFoodTxt.GetComponent<Text>().text = (ColFoodConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount)) + " lbs/week";
+        ColFireTxt.GetComponent<Text>().text = colFireInt + " bundles"; 
+        ConFoodTxt.GetComponent<Text>().text = (ColFoodConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount)) + " lbs/week";
         //print("FoodCon: " + ColFoodConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable);
-        ConWaterTxt.GetComponent<Text>().text = (ColWaterConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().GardenerCount)) + " gal/week";
+        ConWaterTxt.GetComponent<Text>().text = (ColWaterConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount)) + " gal/week";
         //print("WaterCon: " + ColWaterConsumeINT * 7 * ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable); 
+        ConFireTxt.GetComponent<Text>().text = (ColFireConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount)) + " BDL/week";
         ConFoodInt = (int)(ColFoodConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount));
         ConWaterInt = (int)(ColWaterConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount));
         ConFireInt = (int)(ColFireConsumeINT * 7 * (ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable + ColonyController.GetComponent<ColonyControllerScript>().TotalGardCount));
@@ -200,10 +215,11 @@ public class ConsumptionScript : MonoBehaviour {
 
         CafProFoodTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount * 3 * 7 * 4) + " lbs/week";
         CafProWaterTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().WaterGardCount * 0.5 * 7 * 4) + " gal/week";
+        CafProFireTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().FireGardCount * 1 * 7 * 4) + " BDL/week";
 
         GardProFoodTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().GardenerCount * 3 * 7 * 4) + " lbs/week";
         GardProWaterTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().WaterGardCount * 0.5 * 7 * 4) + " gal/week";
-        GardProFireTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().FireGardCount * 1 * 7 * 4) + " bundles/week";
+        GardProFireTxt.GetComponent<Text>().text = (ColonyController.GetComponent<ColonyControllerScript>().FireGardCount * 1 * 7 * 4) + " BDL/week";
     }
 
     public void ProduceFoodWater()

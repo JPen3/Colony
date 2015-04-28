@@ -102,6 +102,7 @@ public class RoomUIScript : MonoBehaviour {
     public void DayProgress()//will progress the game by one day
     {
         WeekPanel.GetComponent<DayPropScript>().DayInt++;
+        ConsumptionController.GetComponent<ConsumptionScript>().ProduceFoodWater();//this will produce food water and firewood
         ConsumptionController.GetComponent<ConsumptionScript>().ConsumptionUpdate(); 
 
         if (ColonyController.GetComponent<ColonyControllerScript>().ColSupplyAway > 0)
@@ -132,7 +133,7 @@ public class RoomUIScript : MonoBehaviour {
         ColonyController.GetComponent<ColonyControllerScript>().ColResourceAway = 0;
         GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
         GatheringController.GetComponent<GatheringControllerScript>().ReturnSupplyParty();
-        ConsumptionController.GetComponent<ConsumptionScript>().ProduceFoodWater(); 
+         
         
 
     }
