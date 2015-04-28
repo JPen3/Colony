@@ -13,7 +13,10 @@ public class ColonyControllerScript : MonoBehaviour {
     public int ColResCount;
     public int ColMatCount;
 
+    public int TotalGardCount; 
     public int GardenerCount;
+    public int WaterGardCount;
+    public int FireGardCount; 
 
     public GameObject TotalColsTxt;
     public GameObject ColsAwayTxt;
@@ -38,7 +41,7 @@ public class ColonyControllerScript : MonoBehaviour {
     {
         print("Colony stats updated"); 
         TotalColsTxt.GetComponent<Text>().text = "Total Colonists: " + ColonistCount;
-        ColsAwayTxt.GetComponent<Text>().text = "Colonists Away: " + ColResourceAway + "(Material) " + ColSupplyAway + "(Supplies)"; 
+        ColsAwayTxt.GetComponent<Text>().text = "Colonists Away: " + ColResourceAway ; 
         ColsHereTxt.GetComponent<Text>().text = "Colonists Here: " + ColonistsAvailable;
         ColDeathTxt.GetComponent<Text>().text = "Colony Losses: " + ColDeathCount;
         ColsSickTxt.GetComponent<Text>().text = "Colonists Sick: " + ColSickCount;

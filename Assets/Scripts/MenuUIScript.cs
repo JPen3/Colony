@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; 
 
 public class MenuUIScript : MonoBehaviour {
 
-	// Use this for initialization
+    public GameObject StartTxt;
+    public GameObject QuitTxt; 
+    
+    // Use this for initialization
 	void Start () {
 	
 	}
@@ -15,11 +19,13 @@ public class MenuUIScript : MonoBehaviour {
 
     public void StartGame()
     {
+        StartTxt.GetComponent<Text>().color = Color.yellow; 
         Application.LoadLevel("RyanTestScene01"); 
     }
 
     public void ExitGame()
     {
+        QuitTxt.GetComponent<Text>().color = Color.yellow;
         Application.Quit(); 
     }
 }
