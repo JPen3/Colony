@@ -18,7 +18,9 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject WeekPanel;
     public GameObject DaQuickHelpPanel;
     public GameObject EventController;
-    public GameObject UserNoteController; 
+    public GameObject UserNoteController;
+
+    public GameObject GameOverPanel; 
 
 	private Inventory inventory;
 
@@ -134,7 +136,11 @@ public class RoomUIScript : MonoBehaviour {
         GatheringController.GetComponent<GatheringControllerScript>().ReturnGather();
         GatheringController.GetComponent<GatheringControllerScript>().ReturnSupplyParty();
          
-        
+        if(ColonyController.GetComponent<ColonyControllerScript>().ColonistCount <= 0)
+        {
+            print("Game Over");
+            GameOverPanel.SetActive(true); 
+        }
 
     }
 
