@@ -146,6 +146,8 @@ public class InventoryInteractScript : MonoBehaviour {
             print("You can craft.");
             CraftAlarm();
             CraftMolotov();
+            CraftNailBoard();
+            CraftBoardWindow();
         }
         print("You cannot craft.");
     }
@@ -166,6 +168,28 @@ public class InventoryInteractScript : MonoBehaviour {
         if (CraftContains(0) && CraftContains(3) && CraftContains(6))
         {
             Inv_Obj[8].GetComponent<InventoryActions>().AddItemCount();
+            CraftNode01_ID = 51;
+            CraftNode02_ID = 51;
+            CraftNode03_ID = 51;
+        }
+    }
+
+    void CraftNailBoard()
+    {
+        if (CraftContains(1) && CraftContains(2) && CraftContains(11))
+        {
+            Inv_Obj[9].GetComponent<InventoryActions>().AddItemCount();
+            CraftNode01_ID = 51;
+            CraftNode02_ID = 51;
+            CraftNode03_ID = 51;
+        }
+    }
+
+    void CraftBoardWindow()
+    {
+        if (CraftContains(2) && CraftContains(9) && CraftContains(11))
+        {
+            Inv_Obj[7].GetComponent<InventoryActions>().AddItemCount();
             CraftNode01_ID = 51;
             CraftNode02_ID = 51;
             CraftNode03_ID = 51;
