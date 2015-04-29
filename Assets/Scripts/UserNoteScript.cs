@@ -35,8 +35,13 @@ public class UserNoteScript : MonoBehaviour {
     {
         NoteTxt.GetComponent<Text>().text = UserNote;
         print(UserNote);
-        JournalNotes.Add(UserNote);
+        //JournalNotes.Add(UserNote);
         //print("List " + JournalNotes[0]); 
+    }
+
+    public void WriteJournal()
+    {
+        JournalNotes.Add(UserNote);
     }
 
     public void DisplayJournalEntry()

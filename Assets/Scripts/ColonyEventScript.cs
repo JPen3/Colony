@@ -4,6 +4,7 @@ using System.Collections;
 public class ColonyEventScript : MonoBehaviour {
 
     public GameObject ColonyController;
+    public GameObject UIController; 
 
     //sickEvent Prob int Vars----------------
     public int SickHealState = 50;
@@ -48,17 +49,21 @@ public class ColonyEventScript : MonoBehaviour {
             {
                 int GainInt = Random.Range(2, 4);
                 string Message = ">" + GainInt + " travelers have asked to join your colony\n";
-                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
+                //ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
                 UserNoteScript.UserNote += Message; 
-                print(Message); 
+                print(Message);
+                RoomUIScript.newColCount += GainInt; 
+                UIController.GetComponent<RoomUIScript>().DisplayNewColQPanel(); 
             }
             else if(ColEventInt02 <= 100)//joined neighbor colony
             {
                 int GainInt = Random.Range(10, 20);
-                string Message = ">A neighbor Colony of " + GainInt + " has decided to join yours.\n";
-                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
+                string Message = ">A neighbor Colony of " + GainInt + " has asked to join yours.\n";
+                //ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
                 UserNoteScript.UserNote += Message; 
-                print(Message); 
+                print(Message);
+                RoomUIScript.newColCount += GainInt;
+                UIController.GetComponent<RoomUIScript>().DisplayNewColQPanel(); 
             }
         }
         else if(ColEventInt01 <= 100)//Negative Event
@@ -191,25 +196,31 @@ public class ColonyEventScript : MonoBehaviour {
             {
                 int GainInt = 1;
                 string Message = ">Party found a runaway.\n";
-                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
+                //ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
                 UserNoteScript.UserNote += Message; 
-                print(Message); 
+                print(Message);
+                RoomUIScript.newColCount += GainInt;
+                UIController.GetComponent<RoomUIScript>().DisplayNewColQPanel(); 
             }
             else if (EventInt <= 90)//found a family
             {
                 int GainInt = Random.Range(2, 6); 
                 string Message = ">Party found a family of " + GainInt + " While Gathering.\n";
-                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
+                //ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
                 UserNoteScript.UserNote += Message; 
                 print(Message);
+                RoomUIScript.newColCount += GainInt;
+                UIController.GetComponent<RoomUIScript>().DisplayNewColQPanel(); 
             }
             else if (EventInt <= 100)//found a group
             {
                 int GainInt = Random.Range(5, 15);
                 string Message = ">Party found a group of " + GainInt + " While Gathering.\n";
-                ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
+                //ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += GainInt;
                 UserNoteScript.UserNote += Message; 
                 print(Message);
+                RoomUIScript.newColCount += GainInt;
+                UIController.GetComponent<RoomUIScript>().DisplayNewColQPanel();
             }
             else
             {

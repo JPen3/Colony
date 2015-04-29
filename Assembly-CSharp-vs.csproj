@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\RoomUIScript.cs" />
      <Compile Include="Assets\Scripts\Testing2dColliders.cs" />
      <Compile Include="Assets\Scripts\UserNoteScript.cs" />
+     <Compile Include="Assets\Scripts\WindowControllerScript.cs" />
      <Compile Include="Assets\Scripts\daQuickScript.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />

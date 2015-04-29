@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; 
 
 public class RoomUIScript : MonoBehaviour {
 
@@ -19,6 +20,11 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject DaQuickHelpPanel;
     public GameObject EventController;
     public GameObject UserNoteController;
+    public GameObject InventoryController;
+
+    public static int newColCount;
+    public GameObject NewColMessageTxt;  
+    public GameObject NewColQPanel; 
 
     public GameObject GameOverPanel; 
 
@@ -72,6 +78,7 @@ public class RoomUIScript : MonoBehaviour {
 
     public void NoteClose()
     {
+        UserNoteController.GetComponent<UserNoteScript>().WriteJournal(); 
         NotePanel.SetActive(false);
         UserNoteScript.UserNote = null;
         Invoke("BackToTop", (float)0.5);
@@ -273,5 +280,50 @@ public class RoomUIScript : MonoBehaviour {
             UserNoteController.GetComponent<UserNoteScript>().DisplayWeekInt--;
             UserNoteController.GetComponent<UserNoteScript>().DisplayJournalEntry();
         }
+    }
+
+    public void UpgradeWindows()
+    {
+        if (InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] >= 39)
+        {
+            WindowControllerScript.isBoarded = true;
+            WindowControllerScript.updateWindows = true;
+            InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] -= 39; 
+        }
+        else
+        {
+            string CraftMessage = "You do not have enough nailed planks to upgrade your windows.";
+            print(CraftMessage); 
+        }
+    }
+
+    public void DisplayNewColQPanel()
+    {
+        NewColQPanel.SetActive(true);
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = true;
+        NewColMessageTxt.GetComponent<Text>().text = "Will you let " + newColCount + " new addition(s) into your colony?"; 
+
+    }
+
+    public void AddNewColonist()
+    {
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistsAvailable += newColCount;
+        ColonyController.GetComponent<ColonyControllerScript>().ColonistCount += newColCount;
+        NewColQPanel.SetActive(false);
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = false;
+        string NewColMessage = ">You let " + newColCount + " new colonist(s) join your colony.\n";
+        UserNoteScript.UserNote += NewColMessage;
+        UserNoteScript.updateNote = true;
+        NotePanel.SetActive(true);
+    }
+
+    public void BanishNewColonist()
+    {
+        NewColQPanel.SetActive(false);
+        MainCamera.GetComponent<CameraLerpScript>().hasSelected = false;
+        string NewColMessage = ">You denied " + newColCount + " new colonist(s) from joining your colony.\n";
+        UserNoteScript.UserNote += NewColMessage;
+        UserNoteScript.updateNote = true;
+        NotePanel.SetActive(true);
     }
 }
