@@ -17,8 +17,8 @@ public class InventoryInteractScript : MonoBehaviour {
     public GameObject ItemDescriptionTxt; 
 
     public int[] InventoryCount = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-    public string[] Inv_name = { "Glass Bottle", "Wood Plank", "Nails", "Cloth", "Rope", "Bin", "Alcahol", "Junk", "Molotov Coctail", "Nailed Plank", "Sound Alarm", "Hammer" }; 
-    public string[] Inv_description = { "An empty glass bottle.", "A simple plank of wood.", "Some nails to hammer with.", "Some plain cloth used for crafting.", "Some simple rope used for crafting.", "A simple bin used for crafting.", "Some alcahole used for crafting.", "Bits of this and that used for crafting.", "A Molotov cocktail used for when out gathering.", "A simple plank of week with nails embeded in it.", "A simple noise alarm system to alarm you when unwanted guests arrive.", "A Hammer used when crafting items." }; 
+    public string[] Inv_name = { "Glass Bottle", "Wood Plank", "Nails", "Cloth", "Rope", "Bin", "Alcohol", "Molotov Coctail", "Nailed Plank", "Boarded Window", "Sound Alarm", "Hammer" }; 
+    public string[] Inv_description = { "An empty glass bottle.", "A simple plank of wood.", "Some nails to hammer with.", "Some plain cloth used for crafting.", "Some simple rope used for crafting.", "A simple bin used for crafting.", "Some alcohole used for crafting.", "A Molotov cocktail used for when out gathering.", "A simple plank of week with nails embeded in it.", "Boards to be nailed over your windows to prevent intruders.", "A simple noise alarm system to alarm you when unwanted guests arrive.", "A Hammer used when crafting items." }; 
     public int[] CraftCount = { 0, 0, 0 };
 
     
