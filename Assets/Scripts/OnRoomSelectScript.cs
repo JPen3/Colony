@@ -33,7 +33,8 @@ public class OnRoomSelectScript : MonoBehaviour {
         ColonyController = GameObject.Find("ColonistController");
         InventoryController = GameObject.Find("TestingInventory");
         UserNoteController = GameObject.Find("UserNoteController");
-        WeekCounter = GameObject.Find("WeekPanel"); 
+        WeekCounter = GameObject.Find("WeekPanel");
+        //InventoryController.GetComponent<InventoryInteractScript>().DisplayInventory();
 	}
 	
 	// Update is called once per frame

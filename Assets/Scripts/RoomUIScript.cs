@@ -22,6 +22,8 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject UserNoteController;
     public GameObject InventoryController;
 
+    public GameObject UpgradeOptionsPanel; 
+
     public static int newColCount;
     public GameObject NewColMessageTxt;  
     public GameObject NewColQPanel; 
@@ -284,16 +286,28 @@ public class RoomUIScript : MonoBehaviour {
 
     public void UpgradeWindows()
     {
-        if (InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] >= 39)
+        if (InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] >= 13)
         {
             WindowControllerScript.isBoarded = true;
             WindowControllerScript.updateWindows = true;
-            InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] -= 39; 
+            InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] -= 13;
+            WindowControllerScript.canUpgradeWindow = false; 
         }
         else
         {
             string CraftMessage = "You do not have enough nailed planks to upgrade your windows.";
             print(CraftMessage); 
+        }
+    }
+
+    public void UpgradeDoors()
+    {
+        if(InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[10] >= 4)
+        {
+            WindowControllerScript.isAlarmed = true;
+            WindowControllerScript.updateAlarms = true;
+            InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[10] -= 4;
+            WindowControllerScript.canUpgradeDoors = false; 
         }
     }
 
@@ -325,5 +339,17 @@ public class RoomUIScript : MonoBehaviour {
         UserNoteScript.UserNote += NewColMessage;
         UserNoteScript.updateNote = true;
         NotePanel.SetActive(true);
+    }
+
+    public void OpenCloseUpgradeOptions()
+    {
+        if(UpgradeOptionsPanel.active == false)
+        {
+            UpgradeOptionsPanel.SetActive(true); 
+        }
+        else
+        {
+            UpgradeOptionsPanel.SetActive(false); 
+        }
     }
 }
