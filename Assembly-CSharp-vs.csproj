@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\ColonyControllerScript.cs" />
      <Compile Include="Assets\Scripts\ColonyEventScript.cs" />
      <Compile Include="Assets\Scripts\ConsumptionScript.cs" />
+     <Compile Include="Assets\Scripts\CraftingSystemScript.cs" />
      <Compile Include="Assets\Scripts\DayPropScript.cs" />
      <Compile Include="Assets\Scripts\EventDatabase.cs" />
      <Compile Include="Assets\Scripts\Events.cs" />
