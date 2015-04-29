@@ -3298,6 +3298,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 1932747742}
   UIPanel01: {fileID: 1115010819}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -4645,6 +4648,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 1388712617}
   UIPanel01: {fileID: 1138506840}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -5246,7 +5252,10 @@ MonoBehaviour:
   ColSickCount: 0
   ColResCount: 0
   ColMatCount: 0
+  TotalGardCount: 0
   GardenerCount: 0
+  WaterGardCount: 0
+  FireGardCount: 0
   TotalColsTxt: {fileID: 1076498322}
   ColsAwayTxt: {fileID: 1359986159}
   ColsHereTxt: {fileID: 181902021}
@@ -15465,6 +15474,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 1358153021}
   UIPanel01: {fileID: 1275956782}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -17000,8 +17012,8 @@ RectTransform:
   - {fileID: 1065987711}
   m_Father: {fileID: 762805490}
   m_RootOrder: 4
-  m_AnchorMin: {x: .779883742, y: .330438405}
-  m_AnchorMax: {x: .966325641, y: .627219141}
+  m_AnchorMin: {x: .783807278, y: .260377854}
+  m_AnchorMax: {x: .970249176, y: .557158589}
   m_AnchoredPosition: {x: -.894409537, y: 1.30013752}
   m_SizeDelta: {x: 76, y: 2}
   m_Pivot: {x: -8.56816769e-08, y: .99999994}
@@ -17025,8 +17037,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_NormalColor: {r: .889705896, g: .889705896, b: .889705896, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -17044,7 +17056,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 530980597}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1061885423}
+        m_MethodName: Craft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &530980597
@@ -17061,7 +17085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 1b6230905aa928d4db77367ea81a4d04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca61ccf71a617d64c91c2b48a2301186, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22059,7 +22083,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22446688, guid: d5d54aa8c8a8a5345be490bb082ce796, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5d54aa8c8a8a5345be490bb082ce796, type: 2}
@@ -23234,9 +23258,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 762805490}
-  - {fileID: 263848627}
   - {fileID: 752814568}
+  - {fileID: 263848627}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_AnchorMin: {x: 0, y: 0}
@@ -25454,6 +25477,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 351607984}
   UIPanel01: {fileID: 41941184}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -25824,7 +25850,7 @@ RectTransform:
   - {fileID: 292406553}
   - {fileID: 1160346746}
   m_Father: {fileID: 682305202}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_AnchorMin: {x: .649597287, y: .173610732}
   m_AnchorMax: {x: .915578187, y: .73361665}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -26208,8 +26234,8 @@ RectTransform:
   - {fileID: 1960147669}
   - {fileID: 1963496681}
   - {fileID: 530980595}
-  m_Father: {fileID: 682305202}
-  m_RootOrder: 0
+  m_Father: {fileID: 1948570856}
+  m_RootOrder: 17
   m_AnchorMin: {x: .151334509, y: .152055442}
   m_AnchorMax: {x: .84725064, y: .410996139}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -27808,25 +27834,37 @@ MonoBehaviour:
   ColonyController: {fileID: 170716861}
   ColFoodTxt: {fileID: 412704000}
   ColWaterTxt: {fileID: 1864562712}
+  ColFireTxt: {fileID: 0}
   ConFoodTxt: {fileID: 787393035}
   ConWaterTxt: {fileID: 1212050748}
+  ConFireTxt: {fileID: 0}
   CafProFoodTxt: {fileID: 1606245197}
   CafProWaterTxt: {fileID: 456981778}
+  CafProFireTxt: {fileID: 0}
   GardProFoodTxt: {fileID: 334614745}
   GardProWaterTxt: {fileID: 77097108}
+  GardProFireTxt: {fileID: 0}
   GardenerCountTxt: {fileID: 508523177}
+  GardWaterCountTxt: {fileID: 0}
+  GardFireCountTxt: {fileID: 0}
   TotalColFoodInt: 0
   TotalColWaterInt: 0
+  TotalColFireInt: 0
   ColFoodInt: 900
   ColWaterInt: 500
+  colFireInt: 0
   ColFoodConsumeINT: 3
   ColWaterConsumeINT: .5
+  ColFireConsumeINT: 0
   ProFoodInt: 0
   ProWaterInt: 0
+  ProFireInt: 0
   NoFoodWeek: 0
+  NoFireWeek: 0
   weeksLeft: 0
   ConFoodInt: 0
   ConWaterInt: 0
+  ConFireInt: 0
 --- !u!1 &806052827
 GameObject:
   m_ObjectHideFlags: 0
@@ -30965,8 +31003,13 @@ MonoBehaviour:
   ExitCheckPanel: {fileID: 111537154}
   NotePanel: {fileID: 612996578}
   WeekPanel: {fileID: 1007484461}
+  DaQuickHelpPanel: {fileID: 0}
   EventController: {fileID: 1494874428}
   UserNoteController: {fileID: 236329060}
+  InventoryController: {fileID: 0}
+  NewColMessageTxt: {fileID: 0}
+  NewColQPanel: {fileID: 0}
+  GameOverPanel: {fileID: 0}
 --- !u!224 &900728842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35089,7 +35132,7 @@ MonoBehaviour:
   ItemInfoPanel: {fileID: 752814565}
   ItemNameTxt: {fileID: 1458430437}
   ItemDescriptionTxt: {fileID: 1479120373}
-  InventoryCount: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
+  InventoryCount: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   Inv_name:
   - Glass Bottle
   - Wood Plank
@@ -37427,8 +37470,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .0115581006, y: .0742191672}
   m_AnchorMax: {x: .189337179, y: .925828755}
-  m_AnchoredPosition: {x: .688919067, y: -.514816284}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5.96046448e-08, y: 0}
+  m_SizeDelta: {x: .688919067, y: 0}
   m_Pivot: {x: -8.56816769e-08, y: 1}
 --- !u!114 &1128614926
 MonoBehaviour:
@@ -38655,7 +38698,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .204883784, y: .0742191672}
   m_AnchorMax: {x: .380325764, y: .925828755}
-  m_AnchoredPosition: {x: .300002813, y: -.5}
+  m_AnchoredPosition: {x: .300002813, y: 0}
   m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: -8.56816769e-08, y: 1}
 --- !u!114 &1172104836
@@ -46775,6 +46818,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 510897301}
   UIPanel01: {fileID: 2045912742}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -49470,6 +49516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColonyController: {fileID: 170716861}
+  UIController: {fileID: 0}
   SickHealState: 50
   SickInfectState: 10
   SickDieState: 7
@@ -54280,6 +54327,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 1892424761}
   UIPanel01: {fileID: 938077273}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -59423,8 +59473,12 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 682305202}
+    m_TransformParent: {fileID: 1948570856}
     m_Modifications:
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22455478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -59455,7 +59509,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22455478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 22455478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -59500,6 +59554,127 @@ Prefab:
     - target: {fileID: 155478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
       propertyPath: m_Name
       value: CraftPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1061885423}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Craft
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: .889705896
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: .889705896
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: .889705896
+      objectReference: {fileID: 0}
+    - target: {fileID: 155478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455476, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.96046448e-08
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455476, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: .688919067
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455476, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455476, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455474, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455474, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455472, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455472, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455470, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455470, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: .783807278
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: .260377854
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: .970249176
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455468, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: .557158589
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455470, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca61ccf71a617d64c91c2b48a2301186,
+        type: 3}
+    - target: {fileID: 22455478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455478, guid: a66544f8b704e674db4ea23755958e47, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a66544f8b704e674db4ea23755958e47, type: 2}
@@ -62598,6 +62773,7 @@ RectTransform:
   - {fileID: 1959146651}
   - {fileID: 628009879}
   - {fileID: 341273861}
+  - {fileID: 762805490}
   m_Father: {fileID: 524620407}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -62831,8 +63007,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .3936629, y: .0848287493}
   m_AnchorMax: {x: .566662788, y: .925828755}
-  m_AnchoredPosition: {x: .100005388, y: -.5}
-  m_SizeDelta: {x: 2, y: 1}
+  m_AnchoredPosition: {x: .100005388, y: 0}
+  m_SizeDelta: {x: 2, y: 0}
   m_Pivot: {x: -8.56816769e-08, y: 1}
 --- !u!114 &1960147670
 MonoBehaviour:
@@ -62895,8 +63071,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .577779114, y: .0848287493}
   m_AnchorMax: {x: .753220975, y: .925828755}
-  m_AnchoredPosition: {x: .100005507, y: -.5}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: .100005507, y: 0}
+  m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: -8.56816769e-08, y: 1}
 --- !u!114 &1963496682
 MonoBehaviour:
@@ -63796,6 +63972,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 235936379}
   UIPanel01: {fileID: 522092452}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -63915,6 +64094,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 280410852}
   UIPanel01: {fileID: 341273860}
   UIPanel02: {fileID: 762805489}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}
@@ -67009,6 +67191,9 @@ MonoBehaviour:
   LerpPoint: {fileID: 87861641}
   UIPanel01: {fileID: 760613069}
   UIPanel02: {fileID: 0}
+  FirstVisit: 1
+  HelpPanel: {fileID: 0}
+  RoomUIController: {fileID: 0}
   WeekCounter: {fileID: 0}
   ConsumptionController: {fileID: 0}
   ColonyController: {fileID: 0}

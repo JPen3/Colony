@@ -141,6 +141,52 @@ public class InventoryInteractScript : MonoBehaviour {
         
     }
 
+    public void Craft(){
+        if ((CraftNode01_ID != 51) && (CraftNode02_ID != 51) && (CraftNode03_ID != 51)) {
+            print("You can craft.");
+            CraftAlarm();
+            CraftMolotov();
+        }
+        print("You cannot craft.");
+    }
+
+    void CraftAlarm()
+    {
+        if (CraftContains(0) && CraftContains(1) && CraftContains(7))
+        {
+            Inv_Obj[6].GetComponent<InventoryActions>().AddItemCount();
+            CraftNode01_ID = 51;
+            CraftNode02_ID = 51;
+            CraftNode03_ID = 51;
+        }
+    }
+
+    void CraftMolotov()
+    {
+        if (CraftContains(1) && CraftContains(2) && CraftContains(9))
+        {
+            Inv_Obj[4].GetComponent<InventoryActions>().AddItemCount();
+            CraftNode01_ID = 51;
+            CraftNode02_ID = 51;
+            CraftNode03_ID = 51;
+        }
+    }
+
+    public bool CraftContains(int id){
+        bool result = false;
+        if(CraftNode01_ID == id){
+            result = true;
+        }
+        else if(CraftNode02_ID == id){
+            result = true;
+        }
+        else if (CraftNode03_ID == id){
+            result = true;
+        }
+        return result;
+    }
+
+
     public void useSelectItem()
     {
         Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount(); 
