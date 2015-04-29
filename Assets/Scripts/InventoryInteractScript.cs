@@ -152,9 +152,9 @@ public class InventoryInteractScript : MonoBehaviour {
 
     void CraftAlarm()
     {
-        if (CraftContains(0) && CraftContains(1) && CraftContains(7))
+        if (CraftContains(0) && CraftContains(4) && CraftContains(5))
         {
-            Inv_Obj[6].GetComponent<InventoryActions>().AddItemCount();
+            Inv_Obj[10].GetComponent<InventoryActions>().AddItemCount();
             CraftNode01_ID = 51;
             CraftNode02_ID = 51;
             CraftNode03_ID = 51;
@@ -163,9 +163,9 @@ public class InventoryInteractScript : MonoBehaviour {
 
     void CraftMolotov()
     {
-        if (CraftContains(1) && CraftContains(2) && CraftContains(9))
+        if (CraftContains(0) && CraftContains(3) && CraftContains(6))
         {
-            Inv_Obj[4].GetComponent<InventoryActions>().AddItemCount();
+            Inv_Obj[8].GetComponent<InventoryActions>().AddItemCount();
             CraftNode01_ID = 51;
             CraftNode02_ID = 51;
             CraftNode03_ID = 51;
