@@ -8,20 +8,33 @@ public class InventoryInteractScript : MonoBehaviour {
     public int CraftNode02_ID = 51;
     public int CraftNode03_ID = 51;
 
+    public string CraftNode01_Name = "";
+    public string CraftNode02_Name = "";
+    public string CraftNode03_Name = "";
+
     public GameObject[] Inv_Obj;
     public GameObject[] Craft_Obj;
 
-    public int SelectedItem_ID = 51; 
+    public int SelectedItem_ID = 51;
+    public string SelectedItem_Name = "";
+
     public GameObject ItemInfoPanel;
     public GameObject ItemNameTxt; 
     public GameObject ItemDescriptionTxt; 
 
     public int[] InventoryCount = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-    public string[] Inv_name = { "Glass Bottle", "Wood Plank", "Nails", "Cloth", "Rope", "Bin", "Alcahol", "Junk", "Molotov Coctail", "Nailed Plank", "Sound Alarm", "Hammer" }; 
+    public string[] Inv_name = { "GLASS BOTTLE", "WOOD PLANK", "NAILS", "CLOTH", "ROPE", "BIN", "ALCOHOL", "JUNK", "MOLOTOV COCKTAIL", "NAILED PLANK", "SOUND ALARM", "HAMMER" }; 
     public string[] Inv_description = { "An empty glass bottle.", "A simple plank of wood.", "Some nails to hammer with.", "Some plain cloth used for crafting.", "Some simple rope used for crafting.", "A simple bin used for crafting.", "Some alcahole used for crafting.", "Bits of this and that used for crafting.", "A Molotov cocktail used for when out gathering.", "A simple plank of week with nails embeded in it.", "A simple noise alarm system to alarm you when unwanted guests arrive.", "A Hammer used when crafting items." }; 
     public int[] CraftCount = { 0, 0, 0 };
 
-    
+    public string resourceName = "Item Icons/";
+    public Sprite[] icons = new Sprite[12];
+
+    void Awake()
+    {
+        //icons = Resources.LoadAll<Sprite>(resourceName);
+    }
+
     // Use this for initialization
 	void Start () {
         
@@ -32,7 +45,7 @@ public class InventoryInteractScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
     void SelectInv(string methodString)
@@ -63,7 +76,7 @@ public class InventoryInteractScript : MonoBehaviour {
 
         for (int j = 0; j < Craft_Obj.Length; j++)
         {
-            Craft_Obj[j] = GameObject.Find(("CraftNode" + j).ToString());
+            Craft_Obj[j] = GameObject.Find(("Craft_Node" + j).ToString());
         }
 
         UpdateInventory();
@@ -82,11 +95,12 @@ public class InventoryInteractScript : MonoBehaviour {
 
     public void UpdateCraft()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
             //Craft_Obj[i].GetComponentInChildren<Text>().text = InventoryCount[i].ToString();
             //Craft_Obj[i].GetComponent<InventoryActions>().Inventory_ID = i;
             //Craft_Obj[i].GetComponent<InventoryActions>().ItemCount = InventoryCount[i];
+            //print(Craft_Obj[i].GetComponent<Image>().sprite.ToString());
         }
     }
 
@@ -116,16 +130,22 @@ public class InventoryInteractScript : MonoBehaviour {
             if (CraftNode01_ID > 50)
             {
                 CraftNode01_ID = SelectedItem_ID;
+                CraftNode01_Name = Inv_name[SelectedItem_ID];
+                Craft_Obj[0].GetComponent<Image>().sprite = icons[CraftNode01_ID];
                 Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
             }
             else if (CraftNode02_ID > 50)
             {
                 CraftNode02_ID = SelectedItem_ID;
+                CraftNode02_Name = Inv_name[SelectedItem_ID];
+                Craft_Obj[1].GetComponent<Image>().sprite = icons[CraftNode02_ID];
                 Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
             }
             else if (CraftNode03_ID > 50)
             {
                 CraftNode03_ID = SelectedItem_ID;
+                CraftNode03_Name = Inv_name[SelectedItem_ID];
+                Craft_Obj[2].GetComponent<Image>().sprite = icons[CraftNode03_ID];
                 Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
             }
             else
