@@ -35572,7 +35572,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705469769}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
@@ -51670,9 +51670,13 @@ MonoBehaviour:
   CraftNode01_ID: 51
   CraftNode02_ID: 51
   CraftNode03_ID: 51
+  CraftNode01_Name: 
+  CraftNode02_Name: 
+  CraftNode03_Name: 
   Inv_Obj: []
   Craft_Obj: []
   SelectedItem_ID: 51
+  SelectedItem_Name: 
   ItemInfoPanel: {fileID: 752814565}
   ItemNameTxt: {fileID: 1458430437}
   ItemDescriptionTxt: {fileID: 1479120373}
@@ -51704,6 +51708,20 @@ MonoBehaviour:
   - A simple noise alarm system to alarm you when unwanted guests arrive.
   - A Hammer used when crafting items.
   CraftCount: 000000000000000000000000
+  resourceName: Item Icons/
+  icons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1061885424
 Transform:
   m_ObjectHideFlags: 0
@@ -72103,7 +72121,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColonyController: {fileID: 170716861}
+  InventoryController: {fileID: 1061885422}
   UIController: {fileID: 900728840}
+  ColKidsState: 25
+  ColTravState: 15
+  ColColState: 10
+  ColSickState: 20
+  ColBanditState: 15
+  ColLeaveState: 10
+  ColCivilWarState: 8
+  ColChemicalState: 10
+  GathBearState: 10
+  GathWolfState: 15
+  GathBanditState: 25
+  GathRunawayState: 20
+  GathFamState: 20
+  GathGroupState: 10
   SickHealState: 50
   SickInfectState: 10
   SickDieState: 7
