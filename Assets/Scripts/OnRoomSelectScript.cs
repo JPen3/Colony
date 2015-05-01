@@ -34,6 +34,7 @@ public class OnRoomSelectScript : MonoBehaviour {
         InventoryController = GameObject.Find("TestingInventory");
         UserNoteController = GameObject.Find("UserNoteController");
         WeekCounter = GameObject.Find("WeekPanel");
+        RoomUIController = GameObject.Find("UIControllerObj"); 
         //InventoryController.GetComponent<InventoryInteractScript>().DisplayInventory();
 	}
 	
@@ -124,6 +125,16 @@ public class OnRoomSelectScript : MonoBehaviour {
         if (UIPanel01.name == "TestInventoryPanel02")
         {
             InventoryController.GetComponent<InventoryInteractScript>().DisplayInventory();
+            if(this.name == "CraftingLabCollider")
+            {
+                UIPanel01.transform.FindChild("CraftingPanel").gameObject.SetActive(true);
+                RoomUIController.GetComponent<RoomUIScript>().SelectCraftingRoom(); 
+            }
+            else
+            {
+                UIPanel01.transform.FindChild("CraftingPanel").gameObject.SetActive(false);
+                RoomUIController.GetComponent<RoomUIScript>().SelectInventoryRoom(); 
+            }
         }
         if(UIPanel01.name == "EntryPanel")
         {

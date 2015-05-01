@@ -10,8 +10,8 @@ public class WindowControllerScript : MonoBehaviour {
     public static bool updateAlarms = false; 
     public static bool isBoarded = false;
     public static bool isAlarmed = false; 
-    public static bool canUpgradeWindow = false;
-    public static bool canUpgradeDoors = false; 
+    public static bool canUpgradeWindow = true;
+    public static bool canUpgradeDoors = true; 
 
     // Use this for initialization
 	void Start () {

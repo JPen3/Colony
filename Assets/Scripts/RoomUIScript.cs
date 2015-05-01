@@ -21,6 +21,7 @@ public class RoomUIScript : MonoBehaviour {
     public GameObject EventController;
     public GameObject UserNoteController;
     public GameObject InventoryController;
+    public GameObject InvDescriptionPanel; 
 
     public GameObject UpgradeOptionsPanel; 
 
@@ -84,7 +85,7 @@ public class RoomUIScript : MonoBehaviour {
         NotePanel.SetActive(false);
         UserNoteScript.UserNote = null;
         Invoke("BackToTop", (float)0.5);
-        MainCamera.GetComponent<CameraLerpScript>().hasSelected = false; 
+        //MainCamera.GetComponent<CameraLerpScript>().hasSelected = false; 
     }
 
     public void SelectResources()//brings up the resources panel
@@ -286,7 +287,7 @@ public class RoomUIScript : MonoBehaviour {
 
     public void UpgradeWindows()
     {
-        if (InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] >= 13)
+        if (InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[9] >= 13 && WindowControllerScript.canUpgradeWindow)
         {
             WindowControllerScript.isBoarded = true;
             WindowControllerScript.updateWindows = true;
@@ -302,7 +303,7 @@ public class RoomUIScript : MonoBehaviour {
 
     public void UpgradeDoors()
     {
-        if(InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[10] >= 4)
+        if(InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[10] >= 4 && WindowControllerScript.canUpgradeDoors)
         {
             WindowControllerScript.isAlarmed = true;
             WindowControllerScript.updateAlarms = true;
@@ -351,5 +352,14 @@ public class RoomUIScript : MonoBehaviour {
         {
             UpgradeOptionsPanel.SetActive(false); 
         }
+    }
+
+    public void SelectCraftingRoom()
+    {
+        InvDescriptionPanel.transform.FindChild("UseCraftButton").GetComponent<Button>().interactable = true; 
+    }
+    public void SelectInventoryRoom()
+    {
+        InvDescriptionPanel.transform.FindChild("UseCraftButton").GetComponent<Button>().interactable = false; 
     }
 }
