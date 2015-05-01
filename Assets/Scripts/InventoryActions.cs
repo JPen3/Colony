@@ -66,6 +66,7 @@ public class InventoryActions : MonoBehaviour {
     {
         if(canClick)
         {
+            print(this.Inventory_ID);
             canClick = false; 
             OpenWindow();
             InventoryController.GetComponent<InventoryInteractScript>().SelectedItem_ID = this.Inventory_ID; 

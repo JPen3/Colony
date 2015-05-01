@@ -37,6 +37,7 @@ public class RoomUIScript : MonoBehaviour {
     // Use this for initialization
 	void Start () {
 		inventory = GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>();
+        //InventoryController = GameObject.FindGameObjectWithTag("TestInventory").GetComponent<InventoryInteractScript>();
         MainPanel.SetActive(true);
         DaQuickHelpPanel.SetActive(true);
         MainCamera.GetComponent<CameraLerpScript>().hasSelected = true; 
@@ -72,8 +73,9 @@ public class RoomUIScript : MonoBehaviour {
         
         MainCamera.GetComponent<CameraLerpScript>().back2Top();
         MainPanel.SetActive(true);
-        MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = MainPanel; 
-        
+        MainCamera.GetComponent<CameraLerpScript>().CurrentUIPanel = MainPanel;
+
+        InventoryController.GetComponent<InventoryInteractScript>().CloseItemInfoPanel();
 
 		inventory.SetShowInventory(false);
 		inventory.SetShowCraft(false);
