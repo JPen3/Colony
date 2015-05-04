@@ -11213,8 +11213,9 @@ GameObject:
   - 224: {fileID: 234021524}
   - 222: {fileID: 234021526}
   - 114: {fileID: 234021525}
+  - 114: {fileID: 234021527}
   m_Layer: 5
-  m_Name: Craft_Node1
+  m_Name: Craft_Node02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11267,6 +11268,59 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 879655675}
   m_GameObject: {fileID: 234021523}
+--- !u!114 &234021527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 234021523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 234021525}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061885423}
+        m_MethodName: deselectCraftItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Craft_Node02
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &235317963
 GameObject:
   m_ObjectHideFlags: 0
@@ -34980,8 +35034,9 @@ GameObject:
   - 224: {fileID: 695857626}
   - 222: {fileID: 695857628}
   - 114: {fileID: 695857627}
+  - 114: {fileID: 695857629}
   m_Layer: 5
-  m_Name: Craft_Node0
+  m_Name: Craft_Node01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35034,6 +35089,59 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 879655675}
   m_GameObject: {fileID: 695857625}
+--- !u!114 &695857629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695857625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 695857627}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061885423}
+        m_MethodName: deselectCraftItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Craft_Node01
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &696875858
 GameObject:
   m_ObjectHideFlags: 0
@@ -45142,6 +45250,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 341273861}
     m_Modifications:
+    - target: {fileID: 11429104, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22429088, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -45240,19 +45352,39 @@ Prefab:
         type: 3}
     - target: {fileID: 129092, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
       propertyPath: m_Name
-      value: Craft_Node1
+      value: Craft_Node02
       objectReference: {fileID: 0}
     - target: {fileID: 129090, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
       propertyPath: m_Name
-      value: Craft_Node0
+      value: Craft_Node01
       objectReference: {fileID: 0}
     - target: {fileID: 129094, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
       propertyPath: m_Name
-      value: Craft_Node2
+      value: Craft_Node03
       objectReference: {fileID: 0}
     - target: {fileID: 129096, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
       propertyPath: m_Name
-      value: Craft_Node3
+      value: Craft_Node04
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429104, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429104, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429104, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1061885423}
+    - target: {fileID: 11429104, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Craft
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429104, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afc9610a0d4ccd64db86f5e2afd6607a, type: 2}
@@ -52415,18 +52547,19 @@ MonoBehaviour:
   CraftCount: 000000000000000000000000
   resourceName: Item Icons/
   icons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: f9a7dc42599a841479a458e90727d580, type: 3}
+  - {fileID: 21300000, guid: b843e57877eac334393e8a0ffd56867d, type: 3}
+  - {fileID: 21300000, guid: ac4d23fc36b12f74aa13257ba0b003cb, type: 3}
+  - {fileID: 21300000, guid: 3c721faf5e21fbc42b662c8b5e5768a4, type: 3}
+  - {fileID: 21300000, guid: a3bd862462c49d0459aa614f20378933, type: 3}
+  - {fileID: 21300000, guid: ac8768860febc3841ae611cdaf5880b4, type: 3}
+  - {fileID: 21300000, guid: 2b8b979b34cb55f48ae717e84e6f8872, type: 3}
+  - {fileID: 21300000, guid: 1114786817dc77a4597fbce5f1a289fa, type: 3}
+  - {fileID: 21300000, guid: a322a873c9d321041ab3ea73a6c94751, type: 3}
+  - {fileID: 21300000, guid: c4623930415e6a1469853b7242224a97, type: 3}
+  - {fileID: 21300000, guid: 59ea47c21e57cd54b83986d527b2b435, type: 3}
+  - {fileID: 21300000, guid: 5ebfa6c0783ddc846b91877ef0dcfbad, type: 3}
+  - {fileID: 21300000, guid: cef91228229bdb34f9539768efef0272, type: 3}
 --- !u!4 &1061885424
 Transform:
   m_ObjectHideFlags: 0
@@ -62279,7 +62412,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1262727711}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1061885423}
+        m_MethodName: Craft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1262727711
@@ -75182,8 +75327,9 @@ GameObject:
   - 224: {fileID: 1534556340}
   - 222: {fileID: 1534556342}
   - 114: {fileID: 1534556341}
+  - 114: {fileID: 1534556343}
   m_Layer: 5
-  m_Name: Craft_Node2
+  m_Name: Craft_Node03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75236,6 +75382,59 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 879655675}
   m_GameObject: {fileID: 1534556339}
+--- !u!114 &1534556343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534556339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1534556341}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061885423}
+        m_MethodName: deselectCraftItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Craft_Node03
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1536968982
 GameObject:
   m_ObjectHideFlags: 0
@@ -82690,6 +82889,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1061885423}
+        m_MethodName: resetCraft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1672068713
@@ -88925,7 +89136,7 @@ GameObject:
   - 222: {fileID: 1801666000}
   - 114: {fileID: 1801665999}
   m_Layer: 5
-  m_Name: Craft_Node3
+  m_Name: Craft_Node04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
