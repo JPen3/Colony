@@ -27,7 +27,7 @@ public class RoomUIScript : MonoBehaviour {
 
     public static int newColCount;
     public GameObject NewColMessageTxt;  
-    public GameObject NewColQPanel; 
+    public GameObject NewColQPanel;
 
     public GameObject GameOverPanel; 
 

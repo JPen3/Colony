@@ -5,7 +5,11 @@ using UnityEngine.UI;
 public class MenuUIScript : MonoBehaviour {
 
     public GameObject StartTxt;
-    public GameObject QuitTxt; 
+    public GameObject QuitTxt;
+    public GameObject CreditsTxt; 
+
+    public GameObject CreditsPanel;
+    public GameObject StartScreenPanel;
     
     // Use this for initialization
 	void Start () {
@@ -27,5 +31,19 @@ public class MenuUIScript : MonoBehaviour {
     {
         QuitTxt.GetComponent<Text>().color = Color.yellow;
         Application.Quit(); 
+    }
+
+    public void OpenCredits()
+    {
+        CreditsTxt.GetComponent<Text>().color = Color.yellow; 
+        StartScreenPanel.SetActive(false);
+        CreditsPanel.SetActive(true); 
+    }
+
+    public void BackFromCredits()
+    {
+        CreditsTxt.GetComponent<Text>().color = Color.white; 
+        StartScreenPanel.SetActive(true);
+        CreditsPanel.SetActive(false); 
     }
 }
