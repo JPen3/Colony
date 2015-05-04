@@ -6,7 +6,7 @@ TagManager:
   - Item Database
   - Inventory
   - InventoryIcon
-  - CraftIcon
+  - CraftNode
   - windowObj
   - NoisAlarmObj
   - TestInventory
