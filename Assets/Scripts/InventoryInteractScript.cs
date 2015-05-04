@@ -51,6 +51,7 @@ public class InventoryInteractScript : MonoBehaviour {
 
     void SelectInv(string methodString)
     {
+        print("SelectInv called");
         string methodName = methodString; 
         System.Type thisType = this.GetType();
         System.Reflection.MethodInfo theMethod = thisType.GetMethod(methodName);
@@ -64,20 +65,25 @@ public class InventoryInteractScript : MonoBehaviour {
 
     public void DisplayInventory()
     {
+        print("I'm in DisplayInventory!");
         Inv_Obj = new GameObject[12];
         Craft_Obj = new GameObject[4];
 
         GameObject[] tempArray = GameObject.FindGameObjectsWithTag("InventoryIcon");
-        GameObject[] tempArray1 = GameObject.FindGameObjectsWithTag("CraftIcon");
+        //GameObject[] tempArray1 = GameObject.FindGameObjectsWithTag("CraftIcon");
 
         for (int i = 0; i < 12; i++)
         {
             Inv_Obj[i] = GameObject.Find(("ObjPanel" + (i + 1)).ToString());
         }
 
-        for (int j = 0; j < Craft_Obj.Length; j++)
+       
+        for (int j = 0; j < 4; j++)
         {
-            Craft_Obj[j] = GameObject.Find(("Craft_Node" + j).ToString());
+            print("Craft_Node0" + (j + 1));
+            Craft_Obj[j] = GameObject.Find(("Craft_Node0" + (j + 1)).ToString());
+            print(Craft_Obj[j]);
+
         }
 
         UpdateInventory();
@@ -124,42 +130,81 @@ public class InventoryInteractScript : MonoBehaviour {
         ItemInfoPanel.SetActive(false); 
     }
 
+
+    public void deselectCraftItem(string name)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (Craft_Obj[i].name == name)
+            {
+                resetNode(i);
+            }
+        }
+        Craft_Obj[3].GetComponent<Image>().sprite = icons[12];
+    }
+
     public void setCraftItem()
     {
+        print("In Set Craft Item");
         if(InventoryCount[SelectedItem_ID] > 0)
         {
             if (CraftNode01_ID > 50)
             {
+                //print("CraftNode01_ID is " + CraftNode01_ID);
                 CraftNode01_ID = SelectedItem_ID;
                 CraftNode01_Name = Inv_name[SelectedItem_ID];
+                //print("CraftNode01_ID is " + CraftNode01_ID);
                 Craft_Obj[0].GetComponent<Image>().sprite = icons[CraftNode01_ID];
-                Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
+                //Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
             }
             else if (CraftNode02_ID > 50)
             {
+                //print("CraftNode02_ID is " + CraftNode02_ID);
                 CraftNode02_ID = SelectedItem_ID;
                 CraftNode02_Name = Inv_name[SelectedItem_ID];
+                //print("CraftNode02_ID is " + CraftNode02_ID);
                 Craft_Obj[1].GetComponent<Image>().sprite = icons[CraftNode02_ID];
-                Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
+                //Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
             }
             else if (CraftNode03_ID > 50)
             {
+                //print("CraftNode03_ID is " + CraftNode03_ID);
                 CraftNode03_ID = SelectedItem_ID;
                 CraftNode03_Name = Inv_name[SelectedItem_ID];
+                //print("CraftNode03_ID is " + CraftNode03_ID);
                 Craft_Obj[2].GetComponent<Image>().sprite = icons[CraftNode03_ID];
-                Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
+                //Inv_Obj[SelectedItem_ID].GetComponent<InventoryActions>().SubItemCount();
             }
             else
             {
                 print("There are already items in both crafting nodes, click on one to deselect them.");
             }
+            CloseItemInfoPanel();
         }
         else
         {
             print("You don't have enough of that item."); 
         }
-        
-        
+
+        if ((CraftNode01_ID != 51) && (CraftNode02_ID != 51) && (CraftNode03_ID != 51))
+        {
+            if (CraftContains(0) && CraftContains(4) && CraftContains(5))
+            {
+                Craft_Obj[3].GetComponent<Image>().sprite = icons[10];
+            }
+            if (CraftContains(0) && CraftContains(3) && CraftContains(6))
+            {
+                Craft_Obj[3].GetComponent<Image>().sprite = icons[7];
+            }
+            if (CraftContains(1) && CraftContains(2) && CraftContains(11))
+            {
+                Craft_Obj[3].GetComponent<Image>().sprite = icons[8];
+            }
+            if (CraftContains(2) && CraftContains(8) && CraftContains(11))
+            {
+                Craft_Obj[3].GetComponent<Image>().sprite = icons[9];
+            }
+        }
     }
 
     public void Craft(){
@@ -173,14 +218,67 @@ public class InventoryInteractScript : MonoBehaviour {
         print("You cannot craft.");
     }
 
+    public void resetNode(int id)
+    {
+        if (id == 0)
+        {
+            CraftNode01_ID = 51;
+            CraftNode01_Name = "";
+        }
+        if (id == 1)
+        {
+            CraftNode02_ID = 51;
+            CraftNode02_Name = "";
+        }
+        if (id == 2)
+        {
+            CraftNode03_ID = 51;
+            CraftNode03_Name = "";
+        }
+        Craft_Obj[id].GetComponent<Image>().sprite = icons[12];
+    }
+
+    public void resetCraft()
+    {
+        CraftNode01_ID = 51;
+        CraftNode02_ID = 51;
+        CraftNode03_ID = 51;
+        CraftNode01_Name = "";
+        CraftNode02_Name = "";
+        CraftNode03_Name = "";
+        for (int i = 0; i < 4; i++)
+        {
+            Craft_Obj[i].GetComponent<Image>().sprite = icons[12];
+        }
+    }
+
+    /*public void closeCraft()
+    {
+        if (CraftNode01_ID != 51)
+        {
+            Inv_Obj[CraftNode01_ID].GetComponent<InventoryActions>().AddItemCount();
+        }
+        if (CraftNode02_ID != 51)
+        {
+            Inv_Obj[CraftNode02_ID].GetComponent<InventoryActions>().AddItemCount();
+        }
+        if (CraftNode03_ID != 51)
+        {
+            Inv_Obj[CraftNode03_ID].GetComponent<InventoryActions>().AddItemCount();
+        }
+
+        resetCraft();
+    }*/
+
     void CraftAlarm()
     {
         if (CraftContains(0) && CraftContains(4) && CraftContains(5))
         {
+            Inv_Obj[0].GetComponent<InventoryActions>().SubItemCount();
+            Inv_Obj[4].GetComponent<InventoryActions>().SubItemCount();
+            Inv_Obj[5].GetComponent<InventoryActions>().SubItemCount();
             Inv_Obj[10].GetComponent<InventoryActions>().AddItemCount();
-            CraftNode01_ID = 51;
-            CraftNode02_ID = 51;
-            CraftNode03_ID = 51;
+            resetCraft();
         }
     }
 
@@ -188,10 +286,11 @@ public class InventoryInteractScript : MonoBehaviour {
     {
         if (CraftContains(0) && CraftContains(3) && CraftContains(6))
         {
-            Inv_Obj[8].GetComponent<InventoryActions>().AddItemCount();
-            CraftNode01_ID = 51;
-            CraftNode02_ID = 51;
-            CraftNode03_ID = 51;
+            Inv_Obj[0].GetComponent<InventoryActions>().SubItemCount();
+            Inv_Obj[3].GetComponent<InventoryActions>().SubItemCount();
+            Inv_Obj[6].GetComponent<InventoryActions>().SubItemCount();
+            Inv_Obj[7].GetComponent<InventoryActions>().AddItemCount();
+            resetCraft();
         }
     }
 
@@ -199,21 +298,31 @@ public class InventoryInteractScript : MonoBehaviour {
     {
         if (CraftContains(1) && CraftContains(2) && CraftContains(11))
         {
-            Inv_Obj[9].GetComponent<InventoryActions>().AddItemCount();
-            CraftNode01_ID = 51;
-            CraftNode02_ID = 51;
-            CraftNode03_ID = 51;
+            Inv_Obj[1].GetComponent<InventoryActions>().SubItemCount();
+            Inv_Obj[2].GetComponent<InventoryActions>().SubItemCount();
+            if (Random.Range(0, 25) == 25)
+            {
+                print("Your hammer broked");
+                Inv_Obj[11].GetComponent<InventoryActions>().SubItemCount();
+            }
+            Inv_Obj[8].GetComponent<InventoryActions>().AddItemCount();
+            resetCraft();
         }
     }
 
     void CraftBoardWindow()
     {
-        if (CraftContains(2) && CraftContains(9) && CraftContains(11))
+        if (CraftContains(2) && CraftContains(8) && CraftContains(11))
         {
-            Inv_Obj[7].GetComponent<InventoryActions>().AddItemCount();
-            CraftNode01_ID = 51;
-            CraftNode02_ID = 51;
-            CraftNode03_ID = 51;
+            Inv_Obj[2].GetComponent<InventoryActions>().SubItemCount();
+            Inv_Obj[8].GetComponent<InventoryActions>().SubItemCount();
+            if(Random.Range(0,25) == 25)
+            {
+                print("Your hammer broked");
+                Inv_Obj[11].GetComponent<InventoryActions>().SubItemCount();
+            }
+            Inv_Obj[9].GetComponent<InventoryActions>().AddItemCount();
+            resetCraft();
         }
     }
 

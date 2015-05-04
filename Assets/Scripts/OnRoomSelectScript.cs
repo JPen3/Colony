@@ -66,8 +66,9 @@ public class OnRoomSelectScript : MonoBehaviour {
 				}
 				if(UIPanel01.name == "CraftingPanel")
 				{
-					inventory.SetShowInventory(true);
 					inventory.SetShowCraft(true);
+                    inventory.SetShowInventory(true);
+					
                     print("You're in the Crafting");
                     print("Inventory is true");
                     print("Craft is true");
@@ -124,7 +125,7 @@ public class OnRoomSelectScript : MonoBehaviour {
 
         if (UIPanel01.name == "TestInventoryPanel02")
         {
-            InventoryController.GetComponent<InventoryInteractScript>().DisplayInventory();
+            
             if(this.name == "CraftingLabCollider")
             {
                 UIPanel01.transform.FindChild("CraftingPanel").gameObject.SetActive(true);
@@ -135,6 +136,7 @@ public class OnRoomSelectScript : MonoBehaviour {
                 UIPanel01.transform.FindChild("CraftingPanel").gameObject.SetActive(false);
                 RoomUIController.GetComponent<RoomUIScript>().SelectInventoryRoom(); 
             }
+            InventoryController.GetComponent<InventoryInteractScript>().DisplayInventory();
         }
         if(UIPanel01.name == "EntryPanel")
         {
