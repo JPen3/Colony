@@ -120,13 +120,13 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 0038caecc34c23f4c9f736115769f3b1, type: 3}
+    - m_Icon: {fileID: 2800000, guid: f3acd87a8b5de3c44bee884f43f85b92, type: 3}
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Android
     m_StaticBatching: 1
     m_DynamicBatching: 1
-  webPlayerTemplate: APPLICATION:Default
+  webPlayerTemplate: APPLICATION:Black Background
   m_TemplateCustomTags: {}
   locationUsageDescription: 
   XboxTitleId: 

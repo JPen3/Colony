@@ -55,9 +55,22 @@ public class GatheringControllerScript : MonoBehaviour {
             }*/
         }
         //generating random stack of three random items
-        int stack1 = Random.Range(0, 12);
-        int stack2 = Random.Range(0, 12);
-        int stack3 = Random.Range(0, 12);
+        int stack1 = Random.Range(0, 8);
+        int stack2 = Random.Range(0, 8);
+        int stack3 = Random.Range(0, 8);
+
+        if(stack1 == 7)
+        {
+            stack1 = 11; 
+        }
+        if (stack2 == 7)
+        {
+            stack2 = 11;
+        }
+        if (stack3 == 7)
+        {
+            stack3 = 11;
+        }
         InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack1] += Random.Range(1, 11);
         InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack2] += Random.Range(1, 11);
         InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack3] += Random.Range(1, 11);
@@ -88,22 +101,22 @@ public class GatheringControllerScript : MonoBehaviour {
 
     public void ReturnSupplyParty()
     {
-        int stack01 = Random.Range(0, 10);
-        int stack02 = Random.Range(0, 10);
-        int stack03 = Random.Range(0, 10);
-        for (int i = 0; i < 3; i++)
-        {
-            Inventory.GetComponent<Inventory>().AddItem(Random.Range(0, 9));
-            /*for(int j = 0; i<Random.Range(1,11); j++)
-            {
-                Inventory.GetComponent<Inventory>().AddItem(Random.Range(0, 9));
-            }*/
-        }
+        int stack1 = Random.Range(0, 8);
+        int stack2 = Random.Range(0, 8);
+        int stack3 = Random.Range(0, 8);
 
-        //generating random stack of three random items
-        int stack1 = Random.Range(0, 12);
-        int stack2 = Random.Range(0, 12);
-        int stack3 = Random.Range(0, 12);
+        if (stack1 == 7)
+        {
+            stack1 = 11;
+        }
+        if (stack2 == 7)
+        {
+            stack2 = 11;
+        }
+        if (stack3 == 7)
+        {
+            stack3 = 11;
+        }
         InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack1] += Random.Range(1, 11);
         InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack2] += Random.Range(1, 11);
         InventoryController.GetComponent<InventoryInteractScript>().InventoryCount[stack3] += Random.Range(1, 11);

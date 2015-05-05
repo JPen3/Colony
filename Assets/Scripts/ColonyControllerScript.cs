@@ -49,4 +49,14 @@ public class ColonyControllerScript : MonoBehaviour {
 
     }
 
+    public void ReturnGardeners()
+    {
+        ColonistsAvailable += TotalGardCount;
+        TotalGardCount = 0;
+        GardenerCount = 0;
+        FireGardCount = 0;
+        WaterGardCount = 0; 
+
+    }
+
 }
